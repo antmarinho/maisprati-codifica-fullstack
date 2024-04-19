@@ -8,3 +8,5 @@
 
 - cada questao esta dividido em modulos de funcao para executar e so chamar o modulo desejado no codigo ex questao5();
 
+- depois e so executar o comando no terminal node lista_1.js
+
