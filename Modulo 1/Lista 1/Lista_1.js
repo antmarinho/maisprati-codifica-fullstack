@@ -13,6 +13,8 @@ function questao1() {
 
 }
 
+// questao1()
+
 // --------------- questao 2 ------------------------------
 
 function questao2() {
@@ -31,6 +33,8 @@ function questao2() {
     console.log(`${percValidos}% de votos validos`);
 
 }
+
+// questao2()
 
 // --------------- questao 3 ------------------------------
 
@@ -51,6 +55,8 @@ function questao3() {
 
 }
 
+// questao3()
+
 // --------------- questao 4 e 5 ------------------------------
 
 function questao4e5() {
@@ -67,6 +73,8 @@ function questao4e5() {
     }
 
 }
+
+// questao4e5()
 
 // --------------- questao 6 ------------------------------
 
@@ -94,6 +102,8 @@ function questao6() {
 
 }
 
+// questao6()
+
 // --------------- questao 7 ------------------------------
 
 function questao7() {
@@ -115,6 +125,8 @@ function questao7() {
 
 }
 
+// questao7()
+
 // --------------- questao 8 ------------------------------
 
 function questao8() {
@@ -135,6 +147,8 @@ function questao8() {
     }while(z)
 
 }
+
+// questao8()
 
 // --------------- questao 9 ------------------------------
 
@@ -189,6 +203,8 @@ function questao9() {
 
 }
 
+// questao9()
+
 // --------------- questao 10 ------------------------------
 
 function questao10() {
@@ -200,6 +216,8 @@ function questao10() {
     }
 
 }
+
+// questao10()
 
 // --------------- questao 11 ------------------------------
 
@@ -233,6 +251,8 @@ function questao11() {
 
 }
 
+// questao11()
+
 // --------------- questao 12 ------------------------------
 
 function questao12() {
@@ -246,6 +266,8 @@ function questao12() {
     }
 
 }
+
+// questao12()
 
 // --------------- questao 13 ------------------------------
 
@@ -269,6 +291,8 @@ function questao13() {
     }
 
 }
+
+// questao13()
 
 // --------------- questao 14 ------------------------------
 
@@ -295,6 +319,8 @@ function questao14() {
     console.log(`a media aritmetrica e ${(soma/cont).toFixed(2)}`);
 
 }
+
+// questao14()
 
 // --------------- questao 15 ------------------------------
 
@@ -324,6 +350,8 @@ function questao15() {
     console.log(`a media ponderada e ${(soma/somaPeso).toFixed(2)}`);
 
 }
+
+// questao15()
 
 // --------------- questao 16 ------------------------------
 
@@ -366,3 +394,5 @@ function questao16() {
     }
     
 }
+
+// questao16()
