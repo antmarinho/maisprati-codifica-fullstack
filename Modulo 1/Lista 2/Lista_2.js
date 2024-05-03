@@ -60,6 +60,73 @@ function questao3() {
 
 //questao3();
 
+// ---------------- questao 4 --------------------
+
+function questao4() {
+
+    let seg1 = parseInt(prompt("Digite o valor do primeiro segmento de reta "));
+    let seg2 = parseInt(prompt("Digite o valor do segundo segmento de reta "));
+    let seg3 = parseInt(prompt("Digite o valor do terceiro segmento de reta "));
+
+    if((seg1 < (seg2 + seg3)) && (seg2 < (seg1 + seg3)) && (seg3 < (seg1 + seg2)))
+        console.log("o triangulo e valido");
+    else 
+        console.log("triangulo invalido");
+
+}
+
+//questao4();
+
+// ---------------- questao 5 --------------------
+
+function questao5() {
+
+    let sair = true;
+
+    do {
+
+        let inimigo = (parseInt(Math. random() * 3) + 1);
+
+        console.log("Escolha a opcao desejada");
+        console.log();
+        console.log("1 - PEDRA");
+        console.log("2 - PAPEL");
+        console.log("3 - TESOURA");
+        console.log();
+
+        let x = parseInt(prompt("Digite o valor da opcao desejada "));
+
+        if(x < 1 || x > 3) 
+            console.log("Opcao invalida");
+        else if(x === 1 && inimigo === 1)
+            console.log("Seu adversario escolheu pedra o jogo empatou");
+        else if(x === 1 && inimigo === 2)
+            console.log("Voce perdeu o adversario escolher papel");
+        else if(x === 1 && inimigo === 3)
+            console.log("Voce venceu o adversario escolher tesoura");
+        else if(x === 2 && inimigo === 1)
+            console.log("Voce venceu o adversario escolheu pedra");
+        else if(x === 2 && inimigo === 2)
+            console.log("Seu adversario escolheu papel o jogo empatou");
+        else if(x === 2 && inimigo === 3)
+            console.log("Voce perdeu o adversario escolher tesoura");
+        else if(x === 3 && inimigo === 1)
+            console.log("Voce perdeu o adversario escolheu pedra");
+        else if(x === 3 && inimigo === 2)
+            console.log("Voce venceu o adversario escolheu papel");
+        else if(x === 3 && inimigo === 3)
+            console.log("Seu adversario escolheu teseoura o jogo empatou");
+
+        let novo = parseInt(prompt("Para novo jogo digite 1 "));
+
+        if(novo !== 1)
+            sair = false;
+
+    }while(sair);
+
+}
+
+//questao5();
 
 // ---------------- questao 11 ------------------- 
 
