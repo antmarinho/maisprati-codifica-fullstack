@@ -200,3 +200,88 @@ function questao13() {
 }
 
 //questao13();
+
+// ---------------- questao 14 ------------------- 
+
+function questao14() {
+
+    let nome = [];
+
+    for (let i = 0; i < 7; i++)  
+        nome.push(prompt(`Digite o nome da ${i + 1}° pessoa `));
+
+    for (let i = (nome.length - 1); i >= 0; i--) 
+        console.log(nome[i]);
+
+}
+
+//questao14();
+
+// ---------------- questao 15 ------------------- 
+
+function questao15() {
+
+    let numeros = []
+
+    for (let i = 0; i < 10; i++)
+        numeros.push(parseInt(prompt(`Digite o ${i + 1}° numero `)));
+
+    for (let i = 0; i < 10; i++) {
+        
+        if(numeros[i] % 2 === 0) {
+            console.log(`O numero ${numeros[i]} e par e estar armazenado na posicao ${i} do array`);
+        }
+    }
+
+}
+
+//questao15();
+
+// ---------------- questao 16 ------------------- 
+
+function questao16() {
+
+    let numeros = [];
+
+    for (let i = 0; i < 20; i++) 
+        numeros.push(parseInt((Math. random() * 100)));
+
+    console.log("esses sao os numeros gerados ");
+    console.log(numeros);
+
+    console.log("esses sao os numeros ordenados ");
+
+    numeros.sort((a, b) => a -b)
+
+    console.log(numeros);
+        
+}
+
+//questao16();
+
+// ---------------- questao 17 ------------------- 
+
+function questao17() {
+
+    let nome = [];
+    let idade = [];
+
+    for (let i = 0; i < 9; i++) {
+        
+        nome.push(prompt(`Digite o nome da ${i + 1}° pessoa `));
+        idade.push(parseInt(prompt("Digite a idade da pessoa ")));
+
+    }
+
+    console.log("Os menores de idades sao ");
+
+    for (let i = 0; i < 9; i++) {
+        
+        if(idade[i] < 18)
+            console.log(`${nome[i]} tem ${idade[i]} anos`);
+        
+    }
+
+}
+
+//questao17();
