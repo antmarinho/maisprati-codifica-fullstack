@@ -85,7 +85,7 @@ function questao5() {
 
     do {
 
-        let inimigo = (parseInt(Math. random() * 3) + 1);
+        let inimigo = (parseInt(Math.random() * 3) + 1);
 
         console.log("Escolha a opcao desejada");
         console.log();
@@ -127,6 +127,58 @@ function questao5() {
 }
 
 //questao5();
+
+// ---------------- questao 6 -------------------- 
+
+function questao6() {
+
+    let numero = (parseInt(Math.random() * 5) + 1);
+
+    console.log("Jogo do adivinha");
+    let x = parseInt(prompt("Digite um numero entre 1 e 5 e tente adivinha "));
+
+    if(x < 1 || x > 5) 
+        console.log("numero invalido");
+    else if(x === numero)
+        console.log("Voce acertou parabens"); 
+    else
+        console.log(`Voce perdeu o numero sorteado foi ${numero}`);
+
+}
+
+//questao6();
+
+// ---------------- questao 8 -------------------- 
+
+function questao8() {
+
+    let hr = parseInt(prompt("Digite quantas horas voce fez de atividade fisica esse mes? "));
+
+    let pts,din;
+
+    if(hr <= 10 && hr >= 0) {
+
+        pts = hr * 2;
+        din = pts * 0.05;
+
+    } else if(hr > 10 && hr <= 20) {
+
+        pts = hr * 5;
+        din = pts * 0.05;
+
+    } else if(hr > 20) {
+
+        pts = hr * 10;
+        din = pts * 0.05;
+
+    } else 
+        console.log("hora invalida");
+
+    console.log(`Voce fez ${pts} pontos e conseguiu ${din} ${din <= 1 ? 'real' : 'reais'}`);
+
+}
+
+//questao8();
 
 // ---------------- questao 11 ------------------- 
 
@@ -251,7 +303,7 @@ function questao16() {
 
     console.log("esses sao os numeros ordenados ");
 
-    numeros.sort((a, b) => a -b)
+    numeros.sort((a, b) => a - b)
 
     console.log(numeros);
         
@@ -285,3 +337,114 @@ function questao17() {
 }
 
 //questao17();
+
+// ---------------- questao 18 ------------------- 
+
+function questao18() {
+
+    let func = new Object()
+
+    func.nome = prompt("Digite o nome do funcionario ");
+    func.cargo = prompt("Digite o cargo do funcionario ");
+    func.salario = parseFloat(prompt("Digite o salario do funcionario ")).toFixed(2);
+
+    console.log(func);
+
+}
+
+//questao18();
+
+// ---------------- questao 21 ------------------- 
+
+function questao21() {
+
+    let alt = parseFloat(prompt("Digite a altura da pessoa ")).toFixed(2);
+    let sx = prompt("Digite o sexo da pessoa M para masculino ou F para feminino ");
+
+    if(sx === 'm' || sx === 'M') 
+        console.log(`o seu peso ideal e ${((72.7 * alt) - 58).toFixed(2)}`);
+    else if(sx === 'f' || sx === 'F')
+        console.log(`o seu peso ideal e ${((62.1 * alt) - 44.7).toFixed(2)}`);
+    else 
+        console.log("Opcao invalida");
+
+}
+
+//questao21();
+
+// ---------------- questao 38 -------------------
+
+function questao38() {
+
+    function operacaoVetor(v,op){
+
+        let soma = 0;
+        let media;
+        let mult = 1;
+        let ord = [];
+
+        switch(op) {
+
+            case '1':
+
+                for (const x of v) 
+                    soma += x;
+
+                return  `A soma e ${soma}`;
+    
+            break;
+    
+            case '2':
+
+                for (const x of v) 
+                    mult *= x;
+
+                return `A multiplicacao e ${mult}`;
+    
+            break;
+    
+            case '3':
+
+                for (const x of v) 
+                    soma += x;
+
+                return `A media e ${media = soma/6}`;
+    
+            break;
+    
+            case '4':
+
+                ord = v.sort((a,b) => a - b);
+
+                return `a ordem crescente e ${ord}`;
+    
+            break;
+
+            default:
+                return 'Opcao invalida';
+    
+        }
+
+    }
+
+    let v = [];
+
+    for (let i = 0; i < 6; i++) 
+        v.push(parseInt(prompt(`Digite o ${i + 1}° numero `)));
+
+    console.log("1 - Soma dos elementos");
+    console.log("2 - Produtos dos elementos");
+    console.log("3 - Media dos elementos");
+    console.log("4 - Ordene os elementos em ordem crescente");
+    console.log("5 - Mostre o vetor");
+
+    let op = prompt("Escolha a opcao desejada ");   
+
+    if(op === '5')
+        console.log(v);
+    else
+        console.log(operacaoVetor(v,op));
+
+}
+
+//questao38();
