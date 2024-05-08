@@ -148,6 +148,43 @@ function questao6() {
 
 //questao6();
 
+// ---------------- questao 7 -------------------- 
+
+function questao7() {
+
+    console.log("1 - Carro de luxo");
+    console.log("2 - Carro popular");
+
+    let car = parseInt(prompt("Qual carro voce quer alugar? "));
+
+    if(car < 1 || car > 2) 
+        console.log("Opcao invalida");
+
+    else {
+
+        let dias = parseInt(prompt("Por quantos dias voce vai alugar? "));
+        let kms = parseFloat(prompt("Quantos Kms vc perccoreu? "));
+
+        if(car === 1) {
+
+            let valor = ((150.00 * dias) + (kms <= 200 ? (kms * 0.3) : (kms * 0.25))).toFixed(2);
+
+            console.log(`O total do aluguel foi ${valor}`);
+
+        } else {
+
+            let valor = ((90.00 * dias) + (kms <= 100 ? (kms * 0.2) : (kms * 0.1))).toFixed(2);
+
+            console.log(`O total do aluguel foi ${valor}`);
+
+        }
+
+    }
+
+}
+
+//questao7();
+
 // ---------------- questao 8 -------------------- 
 
 function questao8() {
@@ -179,6 +216,120 @@ function questao8() {
 }
 
 //questao8();
+
+// ---------------- questao 9 --------------------
+
+function questao9() {
+
+    let x = true;
+    
+    let arr = [];
+
+    while(x) {
+
+        let func = {};
+        
+        sx = prompt("Qual o sexo do funcionario? digite F para feminino e M para masculino ").toUpperCase();
+
+        if(sx === "F" || sx === "M") {
+
+            if(sx === "F")
+                func.sx = "Feminino";
+            else
+                func.sx = "Masculino";
+
+            func.salario = parseFloat(prompt("Qual o salario do funcionario? "));
+
+            arr.push(func);
+
+            let cont = prompt("Para continuar digite 'S' ").toUpperCase();
+
+            if(cont !== "S") 
+                x = false;
+
+        } else 
+            console.log("Opcao invalida");
+
+    }
+
+    let TotalF = 0,TotalM = 0;
+
+    for(let funcionario of arr) {
+        
+        if(funcionario.sx === "Feminino")
+            TotalF += funcionario.salario;
+        else
+            TotalM += funcionario.salario;
+        
+    };
+
+    console.log(`Total de salario ganho pelos Homens e ${TotalM}`);
+    console.log(`Total de salario ganho pelas Mulheres e ${TotalF}`);
+}
+
+//questao9();
+
+// ---------------- questao 10 ------------------- 
+
+function questao10() {
+
+    function soma(arr) {
+
+        let som = 0;
+
+        for (let i = 0; i < arr.length; i++) 
+            som += arr[i];
+
+        return som;
+    }
+
+    function media(arr) {
+
+        return (soma(arr)/arr.length).toFixed(2);
+
+    }
+
+    function qtdPar(arr) {
+
+        let cont = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            
+            if(arr[i] % 2 === 0)
+                cont ++;
+        }
+
+        return cont;
+    }
+
+    function menor(arr) {
+
+        return Math.min(...arr);
+    }
+
+    x = true;
+
+    let arr = [];
+
+    do {
+
+        arr.push(parseInt(prompt("Digite um numero ")));
+
+        let op = prompt("quer digitar outro numero? digite 'S' para continuar ").toUpperCase();
+        
+        if(op != "S")
+            x = false;
+
+    } while(x);
+
+    console.log(`O somatorio dos valores e ${soma(arr)}`);
+    console.log(`O menor valor e ${menor(arr)}`);
+    console.log(`A media e ${media(arr)}`);
+    console.log(`Quantidade de numero par e ${qtdPar(arr)}`);
+
+}
+
+//questao10();
 
 // ---------------- questao 11 ------------------- 
 
@@ -354,6 +505,24 @@ function questao18() {
 
 //questao18();
 
+// ---------------- questao 19 -------------------
+
+function questao19() {
+
+    
+
+}
+
+//questao19();
+
+// ---------------- questao 20 -------------------
+
+function questao20() {
+
+}
+
+//questao20();
+
 // ---------------- questao 21 ------------------- 
 
 function questao21() {
@@ -448,3 +617,23 @@ function questao38() {
 }
 
 //questao38();
+
+// ---------------- questao 41 -------------------
+
+function questao41() {
+
+    let pessoa = {
+
+        nome: "jose",
+        idade: "25"
+    }
+
+    pessoa.email = "jose@gmail.com";
+
+    console.log(`${pessoa.nome} tem ${pessoa.idade} anos`);
+
+    console.log(pessoa);
+
+}
+
+//questao41();
