@@ -509,8 +509,57 @@ function questao18() {
 
 function questao19() {
 
-    
+    let i = 0;
+    let arr = [];
 
+    while(i < 5) {
+
+        let hora = parseInt(prompt("Digite a hora "));
+
+        if(hora > 23 || hora < 0) 
+            console.log("Hora invalida digite um valor entre 0 e 23");
+        else {
+
+            if(hora === 0)
+                hora = "00";
+            else if(hora < 10)
+                hora = ("0" + hora.toString());
+
+           let min = parseInt(prompt("Digite os minutos "));
+
+           if(min > 59 || min < 0)
+                console.log("Minutos invalido digite um valor entre 0 e 59");
+           else {
+
+            if(min === 0)
+                min = "00";
+            else if(min < 10)
+                min = ("0" + min.toString());
+
+                let seg = parseInt(prompt("Digite os segundos "));
+
+                if(seg > 59 || seg < 0)
+                    console.log("Segundos invalido digite um valor entre 0 e 59");
+                else {
+
+                    if(seg === 0)
+                        seg = "00";
+                    else if(seg < 10)
+                        seg = ("0" + seg.toString());
+
+                    arr.push((`${hora}:${min}:${seg}`).toString());
+                    
+                    i += 1;
+                }
+           }
+        
+        }   
+    }
+
+    for (const hora of arr) 
+        console.log(hora);
+    
+ 
 }
 
 //questao19();
@@ -518,6 +567,37 @@ function questao19() {
 // ---------------- questao 20 -------------------
 
 function questao20() {
+
+    let tabFuncionario = [];
+
+    for(i = 0; i < 80; i++) {
+
+        let funcionario = {};
+
+        funcionario.matricula = prompt(`Digite a matricula do ${i + 1}° funcionario `);
+        funcionario.nome = prompt(`Digite o nome do ${i + 1}° funcionario `);
+        funcionario.salBruto = parseFloat(prompt(`Digite o salario do ${i + 1}° funcionario `)).toFixed(2);
+        funcionario.salLiquido = (funcionario.salBruto * 0.88).toFixed(2);
+        funcionario.inss = (funcionario.salBruto * 0.12).toFixed(2);
+        
+        tabFuncionario.push(funcionario);
+
+        console.log("");
+    }
+
+    console.log("Contracheque dos funcionarios");
+
+    for (const func of tabFuncionario) {
+
+        console.log("-----------------------------");
+
+        console.log(`Matricula: ${func.matricula}`);
+        console.log(`Nome: ${func.nome}`);
+        console.log(`Salario bruto: ${func.salBruto}`);
+        console.log(`Deducao INSS: ${func.inss}`);
+        console.log(`Salario liquido ${func.salLiquido}`);
+        
+    }
 
 }
 
@@ -540,6 +620,264 @@ function questao21() {
 }
 
 //questao21();
+
+// ---------------- questao 22 ------------------- 
+
+function questao22() {
+
+    function media(arr) {
+
+        let soma = 0;
+
+        for (let i = 0; i < arr.length; i++) 
+            soma += arr[i];
+
+        return (soma/arr.length).toFixed(2);
+    }
+
+    function maior(arr) {
+
+        return Math.max(...arr);
+    }
+
+    function percentual(arr) {
+
+        let cont = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            
+            if(arr[i] <= 350)
+                cont += 1;
+            
+        }
+
+        return ((cont * 100)/arr.length).toFixed(2);
+    }
+
+    let x = true;
+
+    let sal = [];
+    let filhos = [];
+
+    while(x) {
+
+        let salario = parseFloat(prompt("Digite o valor do salario "));
+        let qtdFilho = parseInt(prompt("Quantos filhos tem? "));
+
+        sal.push(salario);
+        filhos.push(qtdFilho);
+
+        let op = prompt("para adicionar mais digite 'S' ").toUpperCase();
+
+        if(op !== 'S')
+            x = false;
+    }
+
+    console.log(`A media salarial da populacao e ${media(sal)}`);
+    console.log(`A media de filhos da populacao e ${media(filhos)}`);
+    console.log(`O maior salario e ${maior(sal)}`);
+    console.log(`${percentual(sal)}% de pessoas com salario ate R$ 350,00 `);
+
+}
+
+//questao22();
+
+// ---------------- questao 23 ------------------- 
+
+function imprimir(matriz) {
+
+    for (let i = 0; i < matriz.length; i++) {
+
+        let linha = "[ ";
+
+        for (let j = 0; j < matriz[0].length; j++)
+            linha += matriz[i][j] + " ";
+
+        console.log(linha + "]");
+    }
+
+}
+
+function questao23() {
+
+    let ident = new Array(7);
+
+    for (let i = 0; i < ident.length; i++)
+        ident[i] = new Array(7);
+
+    for (let i = 0; i < ident.length; i++) {
+        
+        for (let j = 0; j < ident[0].length; j++) {
+            
+            if(i === j)
+                ident[i][j] = 1;
+            else
+                ident[i][j] = 0;
+            
+        }
+
+    }
+
+    imprimir(ident);
+
+}
+
+//questao23();
+
+// ---------------- questao 24 ------------------- 
+
+function encherMatriz(m) {
+
+    for (let i = 0; i < m.length; i++) {
+
+        for (let j = 0; j < m[0].length; j++) 
+           m[i][j] = parseInt(((Math.random() * 201) - 100));
+        
+    }
+
+    return m;
+}
+
+function questao24() {
+
+    let m = new Array(6);
+
+    let arr = [];
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(8);
+
+    m = encherMatriz(m);
+
+    for (let i = 0; i < m.length; i++) {
+
+        arr.push(0);
+       
+        for (let j = 0; j < m[0].length; j++) {
+            
+            if(m[i][j] < 0)
+                arr[i] += 1;
+            
+        }
+        
+    }
+
+    console.log("A matriz e ")
+    imprimir(m);
+
+    console.log("");
+    console.log("Quantidade de numero negativos em cada linha da matriz ");
+    console.log(arr);
+
+}
+
+//questao24();
+
+// ---------------- questao 25 ------------------- 
+
+function questao25() {
+
+    let arr = [];
+
+    let m = new Array(15);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(20);
+
+    // questao pede numero reais entao considera numeros com casa decimais ou inteiros positivos e negativos
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseFloat(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+        
+    }
+    
+    for (let j = 0; j < m[0].length; j++) {
+
+        let soma = 0;
+        
+        for (let i = 0; i < m.length; i++)
+            soma += m[i][j];
+
+        arr.push(soma);
+        
+    }
+
+    console.log("A matriz e ");
+    console.log("");
+    imprimir(m);
+
+    console.log("");
+    for (let i = 0; i < arr.length; i++)
+        console.log(`a soma da coluna ${i + 1} e ${arr[i]}`);
+
+}
+
+//questao25();
+
+// ---------------- questao 26 ------------------- 
+
+function questao26() {
+
+    
+
+
+}
+
+//questao26();
+
+// ---------------- questao 27 ------------------- 
+
+function questao27() {
+
+    let arr = [];
+
+    let m = new Array(6);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(6);
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseInt(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+        
+    }
+
+    let num = parseInt(prompt("Digitei um valor par multiplicar com a matriz "));
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            arr.push(m[i][j] * num);
+        
+    }
+
+    console.log(`O numero ${num} vezes cada elemento da matriz da`);
+    console.log(arr);
+}
+
+//questao27();
+
+// ---------------- questao 28 ------------------- 
+
+// ---------------- questao 29 ------------------- 
+
+// ---------------- questao 30 ------------------- 
+
+// ---------------- questao 31 ------------------- 
+
+// ---------------- questao 32 ------------------- 
+
+// ---------------- questao 33 ------------------- 
+
+// ---------------- questao 34 ------------------- 
+
+// ---------------- questao 35 ------------------- 
+
+// ---------------- questao 36 ------------------- 
+
+// ---------------- questao 37 ------------------- 
 
 // ---------------- questao 38 -------------------
 
@@ -618,6 +956,10 @@ function questao38() {
 
 //questao38();
 
+// ---------------- questao 39 ------------------- .
+
+// ---------------- questao 40 -------------------
+
 // ---------------- questao 41 -------------------
 
 function questao41() {
@@ -637,3 +979,21 @@ function questao41() {
 }
 
 //questao41();
+
+// ---------------- questao 42 -------------------
+
+// ---------------- questao 43 -------------------
+
+// ---------------- questao 44 -------------------
+
+// ---------------- questao 45 -------------------
+
+// ---------------- questao 46 -------------------
+
+// ---------------- questao 47 -------------------
+
+// ---------------- questao 48 -------------------
+
+// ---------------- questao 49 -------------------
+
+// ---------------- questao 50 -------------------
