@@ -684,41 +684,35 @@ function questao22() {
 
 // ---------------- questao 23 ------------------- 
 
-function imprimir(matriz) {
-
-    for (let i = 0; i < matriz.length; i++) {
-
-        let linha = "[ ";
-
-        for (let j = 0; j < matriz[0].length; j++)
-            linha += matriz[i][j] + " ";
-
-        console.log(linha + "]");
-    }
-
-}
-
 function questao23() {
 
-    let ident = new Array(7);
+    let tam = parseInt(prompt("Digite o tamanho da matriz identidade entre (1 e 7) "));
 
-    for (let i = 0; i < ident.length; i++)
-        ident[i] = new Array(7);
+    if(tam < 1 || tam > 7)
+        console.log("Numero invalido");
+    else {
 
-    for (let i = 0; i < ident.length; i++) {
-        
-        for (let j = 0; j < ident[0].length; j++) {
-            
-            if(i === j)
-                ident[i][j] = 1;
-            else
-                ident[i][j] = 0;
-            
-        }
+            let ident = new Array(tam);
 
+            for (let i = 0; i < ident.length; i++)
+                ident[i] = new Array(tam);
+
+            for (let i = 0; i < tam; i++) {
+                
+                for (let j = 0; j < tam; j++) {
+                    
+                    if(i === j)
+                        ident[i][j] = 1;
+                    else
+                        ident[i][j] = 0;
+                    
+                }
+
+            }
+
+            console.log("A matriz identidade e ");
+            console.table(ident);
     }
-
-    imprimir(ident);
 
 }
 
@@ -726,48 +720,50 @@ function questao23() {
 
 // ---------------- questao 24 ------------------- 
 
-function encherMatriz(m) {
-
-    for (let i = 0; i < m.length; i++) {
-
-        for (let j = 0; j < m[0].length; j++) 
-           m[i][j] = parseInt(((Math.random() * 201) - 100));
-        
-    }
-
-    return m;
-}
-
 function questao24() {
 
-    let m = new Array(6);
+    let lin = parseInt(prompt("Digite o numero de linhas da matriz entre (1 e 6) "));
+    let col = parseInt(prompt("Digite o numero de colunas da matriz entre (1 e 8) "));
 
-    let arr = [];
+    if((lin < 1 || col < 1) || (lin > 6 || col > 8))
+        console.log("Numero invalido");
+    else {
 
-    for (let i = 0; i < m.length; i++)
-        m[i] = new Array(8);
+            let m = new Array(lin);
 
-    m = encherMatriz(m);
+            let arr = [];
 
-    for (let i = 0; i < m.length; i++) {
+            for (let i = 0; i < m.length; i++)
+                m[i] = new Array(col);
 
-        arr.push(0);
-       
-        for (let j = 0; j < m[0].length; j++) {
-            
-            if(m[i][j] < 0)
-                arr[i] += 1;
-            
-        }
+            for (let i = 0; i < m.length; i++) {
         
+                for (let j = 0; j < m[0].length; j++) 
+                    m[i][j] = parseInt(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+                
+            }
+
+            for (let i = 0; i < m.length; i++) {
+
+                arr.push(0);
+            
+                for (let j = 0; j < m[0].length; j++) {
+                    
+                    if(m[i][j] < 0)
+                        arr[i] += 1;
+                    
+                }
+                
+            }
+
+            console.log("A matriz e ")
+            console.table(m);
+
+            console.log("");
+            console.log("Quantidade de numero negativos em cada linha da matriz ");
+            console.log(arr);
+
     }
-
-    console.log("A matriz e ")
-    imprimir(m);
-
-    console.log("");
-    console.log("Quantidade de numero negativos em cada linha da matriz ");
-    console.log(arr);
 
 }
 
@@ -805,7 +801,7 @@ function questao25() {
 
     console.log("A matriz e ");
     console.log("");
-    imprimir(m);
+    console.table(m);
 
     console.log("");
     for (let i = 0; i < arr.length; i++)
@@ -819,9 +815,91 @@ function questao25() {
 
 function questao26() {
 
+    function multiMxN(m,n) {
+
+        let p = new Array(m.length);
+
+            for (let i = 0; i < p.length; i++)
+                p[i] = new Array(n[0].length);
+
+        for (let i = 0; i < p.length; i++) {
+            
+            for (let j = 0; j < p[0].length; j++) {
+                
+                p[i][j] = 0;
+
+            }
+            
+        }
+
+        for (let i = 0; i < m.length; i++) {
+            
+            for (let j = 0; j < n[0].length; j++) {
+                
+                for (let k = 0; k < m[0].length; k++) {
+                    
+                    p[i][j] = p[i][j] +  (m[i][k] * n[k][j]);
+                    
+                }
+                
+            }
+            
+        }
+
+        return p;
+    }
+
+    let linM = parseInt(prompt("Digite o numero de linhas da matriz M (1 e 3) "));
+    let colM = parseInt(prompt("Digite o numero de colunas da matriz M (1 e 5) "));
+
+    if((linM < 1 || colM < 1) || (linM > 3 || colM > 5))
+        console.log("Numero invalido");
+    else {
+
+        let linN = parseInt(prompt("Digite o numero de linhas da matriz N (1 e 5) "));
+        let colN = parseInt(prompt("Digite o numero de colunas da matriz N (1 e 3) "));
+
+        if((linN < 1 || colN < 1) || (linN > 5 || colN > 3))
+            console.log("Numero invalido");
+        else if(colM !== linN)
+            console.log("Matriz invalida numero de colunas da primeira matriz precisa ser igual o numero de linhas da segunda matriz");
+        else {
+
+                let m = new Array(linM);
+
+                for (let i = 0; i < m.length; i++)
+                    m[i] = new Array(colM);
+
+                console.log("Matriz M");
+
+                for (let i = 0; i < m.length; i++) {
+        
+                    for (let j = 0; j < m[0].length; j++) 
+                        m[i][j] = parseInt(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+                    
+                }
+
+                let n = new Array(linN);
+
+                for (let i = 0; i < n.length; i++)
+                    n[i] = new Array(colN);
+
+                console.log("Matriz N");
+
+                for (let i = 0; i < n.length; i++) {
+        
+                    for (let j = 0; j < n[0].length; j++) 
+                        n[i][j] = parseInt(prompt(`Digite o n[${i + 1}][${j + 1}] da matriz `));
+                    
+                }
+
+                console.log("O produto das matrizes e ");
+                console.table(multiMxN(m,n));
+
+        }
+
+    }
     
-
-
 }
 
 //questao26();
@@ -862,6 +940,89 @@ function questao27() {
 // ---------------- questao 28 ------------------- 
 
 // ---------------- questao 29 ------------------- 
+
+function questao29() {
+
+    function soml4(m) {
+
+        let somL4 = 0;
+
+        for (let i = 0; i < m[0].length; i++) 
+            somL4 += m[3][i];
+
+        return somL4;
+
+    }
+
+    function somc2(m) {
+
+        let somC2 = 0;
+
+        for (let i = 0; i < m.length; i++) 
+            somC2 += m[i][1];
+
+        return somC2;
+
+    }
+
+    function somdp(m) {
+
+        let somDp = 0;
+
+        for (let i = 0; i < m.length; i++) {
+            
+            for (let j = 0; j < m[0].length; j++) {
+                
+                if(i === j)
+                    somDp += m[i][j];
+                
+            }
+            
+        }
+
+        return somDp;
+    }
+
+    function somatotal(m) {
+
+        let somTotal = 0;
+
+        for (let i = 0; i < m.length; i++) {
+            
+            for (let j = 0; j < m[0].length; j++) {
+                
+                somTotal += m[i][j];
+                
+            }
+            
+        }
+
+        return somTotal;
+
+    }
+
+    let m = new Array(5);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(5);
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseInt(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+        
+    }
+
+    console.log("A Matriz e ")
+    console.table(m);
+
+    console.log(`A soma da linha 4 da matriz e ${soml4(m)}`);
+    console.log(`A soma da coluna 2 da matriz e ${somc2(m)}`);
+    console.log(`A soma da diagonal principal e ${somdp(m)}`);
+    console.log(`A soma da matriz e ${somatotal(m)}`);
+}
+
+//questao29();
 
 // ---------------- questao 30 ------------------- 
 
