@@ -939,6 +939,43 @@ function questao27() {
 
 // ---------------- questao 28 ------------------- 
 
+function questao28() {
+
+    let somaDpCima = 0;
+    let somaDpbaixo = 0;
+
+    let m = new Array(10);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(10);
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseInt(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+        
+    }
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) {
+            
+            if(j > i)
+                somaDpCima += m[i][j];
+            else if(j < i)
+                somaDpbaixo += m[i][j];
+            
+        }
+        
+    }
+console.table(m);
+    console.log(`A soma dos elementos acima da diagonal principal e ${somaDpCima}`);
+    console.log(`A soma dos elementos acima da diagonal principal e ${somaDpbaixo}`);
+
+}
+
+//questao28();
+
 // ---------------- questao 29 ------------------- 
 
 function questao29() {
@@ -1026,7 +1063,121 @@ function questao29() {
 
 // ---------------- questao 30 ------------------- 
 
+function questao30() {
+
+    let sl = [];
+    let sc = [];
+
+    let m = new Array(5);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(5);
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseInt(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+        
+    }
+
+    for (let i = 0; i < m.length; i++) {
+
+        let somaL = 0;
+        let somaC = 0;
+        
+        for (let j = 0; j < m[0].length; j++) {
+            
+            somaL += m[i][j];
+            somaC += m[j][i];
+            
+        }
+
+        sl.push(somaL);
+        sc.push(somaC);
+        
+    }
+
+    console.log("A matriz m");
+    console.table(m);
+
+    console.log(`A soma das linhas da Matriz M e [${sl}]`);
+    console.log(`A soma das colunas da Matriz M e [${sc}]`);
+
+}
+
+//questao30();
+
 // ---------------- questao 31 ------------------- 
+
+function questao31() {
+
+    let cont = 0;
+
+    let num = parseInt(prompt("Digite um valor para procurar na matriz "));
+
+    let m = new Array(30);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(30);
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseInt(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+        
+    }
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) {
+            
+            if(num === m[i][j])
+                cont += 1;
+        }
+    }
+
+    let calTamMatrizNova = Math.sqrt(Math.pow(m.length,2) - cont);
+
+    let tamMatrizNova = Math.floor(Math.sqrt(Math.pow(m.length,2) - cont));
+
+    let linColMatrix = tamMatrizNova < calTamMatrizNova ? (tamMatrizNova + 1) : tamMatrizNova;
+
+    let n = new Array(linColMatrix);
+
+    for (let i = 0; i < n.length; i++)
+        n[i] = new Array(linColMatrix);
+
+    let k = 0;
+    let l = 0;
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) {
+            
+            if(num !== m[i][j]) {
+
+                n[k][l] = m[i][j];
+
+                l++
+             
+                if(linColMatrix === l) {
+
+                    k += 1;
+                    l = 0;
+
+                }
+
+            }
+            
+        }
+    }
+
+    console.log("A matriz nova sem o valor digitado e");
+    console.table(n);
+
+}
+
+//questao31();
 
 // ---------------- questao 32 ------------------- 
 
