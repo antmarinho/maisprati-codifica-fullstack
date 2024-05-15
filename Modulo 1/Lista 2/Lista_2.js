@@ -1181,15 +1181,156 @@ function questao31() {
 
 // ---------------- questao 32 ------------------- 
 
+function questao32() {
+
+    let m = new Array(12);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(13);
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseInt(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+        
+    }
+
+    for (let i = 0; i < m.length; i++) {
+
+        maior = Math.max(...m[i]);
+       
+        for (let j = 0; j < m[0].length; j++) {
+           
+            m[i][j] = parseFloat((m[i][j]/maior).toFixed(2));
+            
+        }
+        
+    }
+
+    console.table(m);
+
+}
+
+//questao32();
+
 // ---------------- questao 33 ------------------- 
 
+function questao33() {
+
+    let soma = 0;
+    let media;
+
+    let m = new Array(3);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(3);
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseInt(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+        
+    }
+
+    for (let i = (m.length - 1); i >= 0; i--) {
+            
+            soma += m[i][(m.length - 1) - i];
+            
+    }  
+
+    media = soma/3;
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) {
+
+            if(i === j)
+                m[i][j] = parseFloat((media * m[i][j]).toFixed(2));
+
+        }
+
+    }
+
+    console.table(m);
+
+}
+
+//questao33();
+
 // ---------------- questao 34 ------------------- 
+
+function questao34() {
+
+    let dpElemento;
+
+    let m = new Array(50);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(50);
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseFloat(prompt(`Digite o m[${i + 1}][${j + 1}] da matriz `));
+        
+    }
+
+    for (let i = 0; i < m.length; i++) {
+
+        dpElemento = m[i][i];
+       
+        for (let j = 0; j < m[0].length; j++) {
+           
+            m[i][j] = parseFloat((dpElemento * m[i][j]).toFixed(2));
+            
+        }
+        
+    }
+
+    console.table(m);
+
+}
+
+//questao34();
 
 // ---------------- questao 35 ------------------- 
 
 // ---------------- questao 36 ------------------- 
 
 // ---------------- questao 37 ------------------- 
+
+function questao37() {
+
+    let g = new Array(20); 
+
+    let cont;
+    let valor;
+
+    for (let i = 0; i < g.length; i++)
+       g[i] = prompt(`Digite a letra da questao numero ${i + 1} do gabarito `).toUpperCase();
+
+    for (let i = 0; i < 50; i++) {
+
+        cont = 0;
+        
+        for (let j = 0; j < g.length; j++) {
+
+            valor = (prompt(`Digite a letra da questao numero ${j + 1} do aluno ${i + 1} `).toUpperCase());
+
+            if(g[j] === valor)
+                cont++
+
+        }
+
+        if(cont >= 12)
+            console.log(`Aluno ${i + 1} foi aprovado`);
+        else
+            console.log(`Aluno ${i + 1} foi reprovado`);
+    }
+
+}
+
+//squestao37();
 
 // ---------------- questao 38 -------------------
 
@@ -1268,7 +1409,30 @@ function questao38() {
 
 //questao38();
 
-// ---------------- questao 39 ------------------- .
+// ---------------- questao 39 -------------------
+
+function questao39() {
+
+    let arr = [];
+    let positivo = [];
+
+    for (let i = 0; i < 20; i++) {
+       
+        arr.push(parseInt(prompt("Digite um numero ")));
+
+        if(arr[i] > 0) 
+            positivo.push(arr[i]);
+        
+    }
+
+    console.log("Vetor original");
+    console.log(arr);
+    console.log("Vetor sem numero negativos e nulos");
+    console.log(positivo);
+
+}
+
+//questao39();
 
 // ---------------- questao 40 -------------------
 
