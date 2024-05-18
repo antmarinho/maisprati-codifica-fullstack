@@ -1295,7 +1295,96 @@ function questao34() {
 
 // ---------------- questao 35 ------------------- 
 
+function questao35() {
+
+    let x = true;
+
+    let cont = 0;
+    let i = 0;
+    let j = 0;
+
+    let par = []
+    let impar = []
+
+    while(x) {
+
+        let num = parseInt(prompt("Digite um numero "));
+
+        if(num % 2 === 0) {
+
+            par.push(num);
+            i++;
+        }
+        else if(num % 2 > 0){
+
+            impar.push(num);
+            j++
+
+        }
+
+        cont++;
+
+        if(cont >= 30)
+            x = false;
+        else if(par.length > 4 || impar.length > 4)
+            x = false;
+
+    }
+
+    console.log(`Os valores pares sao  ${par}`);
+    console.log(`Os valores impares sao  ${impar}`);
+
+}
+
+//questao35();
+
 // ---------------- questao 36 ------------------- 
+
+function questao36() {
+
+    let gab = [];
+
+    let jogadores = 0;
+
+    for (let i = 0; i < 13; i++)
+        gab.push(parseInt(prompt(`Digite o ${i + 1} valor do gabarito `)));
+
+    while(jogadores < 100) {
+
+        let numAposta = parseInt(prompt(`Digite o numero do cartao de aposta `));
+
+        let gabJog = [];
+
+        for (let i = 0; i < 13; i++)
+            gabJog.push(parseInt(prompt(`Digite o ${i + 1} valor do jogo `)));
+
+        let cont = 0;
+
+        for (let i = 0; i < 13; i++) {
+           
+            for (let j = 0; j < 13; j++) {
+                
+                if(gabJog[i] === gab[j])
+                    cont++;
+
+            }
+            
+        }
+
+        if(cont >= 13 )
+            console.log("Parabens tu foi o ganhador");
+
+        console.log(`O numero do cartao de aposta e ${numAposta}`);
+        console.log(`O numero de acertos foi ${cont}`);
+
+        jogadores++;
+
+    }
+
+
+}
+
+//questao36();
 
 // ---------------- questao 37 ------------------- 
 
