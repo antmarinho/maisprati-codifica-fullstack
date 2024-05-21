@@ -1,0 +1,23 @@
+.listaNaoOrdenado {
+    list-style-type: square;
+}
+
+nav#menu {
+    display: block;
+}
+
+nav#menu ul {
+    list-style-type: none;
+}
+
+nav#menu li {
+    border:  1px red solid;
+    display: inline-block;
+    background-color: black;
+    color: yellow;
+    padding: 10px;
+}
+
+nav#menu h1 {
+    display: none;
+}
