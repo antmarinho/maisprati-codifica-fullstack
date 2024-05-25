@@ -1,0 +1,35 @@
+/* * {
+    border: 3px solid;
+} */
+
+h2 {
+    color: red;
+}
+
+.classe1 {
+    border: 2px solid;
+}
+
+p.classe1 {
+    background-color: aqua;
+}
+
+#conteudo {
+    border: 2px green solid;
+}
+
+li > a { /* todos a de li*/
+    text-decoration: none;
+}
+
+div a {
+    text-decoration: none;
+}
+
+h2 + p { /* primeiro p depois de um h2*/
+    background-color: rebeccapurple;
+}
+
+h2 ~ p { /* pega primeio p depois de um h2 msm se tiver outra coisa n frnte*/
+    background-color: orange;
+}

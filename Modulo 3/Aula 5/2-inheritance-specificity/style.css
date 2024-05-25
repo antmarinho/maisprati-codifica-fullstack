@@ -1,0 +1,46 @@
+/* div {
+    border: 2px solid;
+}
+
+#div1 p {
+    color: red !important;  /*quebra a regra do ultimo
+} 
+
+#div1 p { /* seletor igual o ultimo q vale
+    color: blue;
+} */
+
+* {
+    color: blue;
+}
+
+h1 {
+    color: red !important; 
+    font-size: 30px;
+}
+
+h1#textop {
+    color: yellow;
+    font-size: 10px;
+}
+
+#textop {
+    color: greenS;
+}
+
+/*
+    se um seletor for mais especifico q o outro regra mais especifica sera aplicada
+
+*/
+
+/* menos importante pro mais
+
+    seletores universais
+    tipos de seletores
+    classes
+    atributos
+    pseudo classes
+    seletores id
+    estilo inline
+    
+*/

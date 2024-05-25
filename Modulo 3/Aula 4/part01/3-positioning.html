@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estatico relativo absoluto e fixo</title>
+    <style>
+        h1 {
+            position: static;
+        }
+        p {
+            width: 400px;
+        }
+        #container {
+            background-color: #fff;
+            width: 800px;
+            margin: 10px auto;
+            padding: 10px;
+            border: 3px black solid;
+        }
+        .relativo {
+            border: 3px red solid;
+            position: relative;
+            left: 50px;
+        }
+        .absoluto {
+            border: 3px green solid;
+            background-color: #f2f2f2;
+            position: absolute;
+            top: 80px;
+        }
+        .fixo {
+            border: 3px yellow solid;
+            background-color: #f2f2f2;
+            position: fixed;
+            top: 0px; 
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>posicionamentos</h1>
+        <p class="relativo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum animi, eveniet tempore facere amet assumenda alias quod, vero blanditiis corporis voluptatum, voluptatibus ullam natus cupiditate impedit commodi tempora beatae inventore?</p>
+        <p class="absoluto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum animi, eveniet tempore facere amet assumenda alias quod, vero blanditiis corporis voluptatum, voluptatibus ullam natus cupiditate impedit commodi tempora beatae inventore?</p>
+        <p class="fixo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum animi, eveniet tempore facere amet assumenda alias quod, vero blanditiis corporis voluptatum, voluptatibus ullam natus cupiditate impedit commodi tempora beatae inventore?</p>
+
+    </div>
+</body>
+</html>
