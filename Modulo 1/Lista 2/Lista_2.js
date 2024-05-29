@@ -1525,6 +1525,50 @@ function questao39() {
 
 // ---------------- questao 40 -------------------
 
+function questao40() {
+
+    let resultado = new Array(5);
+
+    for (let i = 0; i < resultado.length; i++) 
+        resultado[i] = parseInt(prompt(`Digite o ${i + 1}° numero do resultado da loteria `));
+
+    let m = new Array(50);
+
+    for (let i = 0; i < m.length; i++)
+        m[i] = new Array(5);
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) 
+            m[i][j] = parseInt(prompt(`Digite o ${j + 1} numero da aposta do ${i + 1}° jogador `));
+        
+    }
+
+    let cont = 0;
+
+    for (let i = 0; i < m.length; i++) {
+        
+        for (let j = 0; j < m[0].length; j++) {
+            
+            for (let k = 0; k < resultado.length; k++) {
+                
+                if(m[i][j] === resultado[k])
+                    cont += 1;
+            }
+            
+        }
+
+        if(cont === 5)
+            console.log(`o jogar numero ${i + 1} foi um GANHADOR`);
+
+        cont = 0;
+        
+    }
+
+}
+
+//questao40();
+
 // ---------------- questao 41 -------------------
 
 function questao41() {
@@ -1546,6 +1590,13 @@ function questao41() {
 //questao41();
 
 // ---------------- questao 42 -------------------
+
+function questao42() {
+
+
+}
+
+questao42();
 
 // ---------------- questao 43 -------------------
 
