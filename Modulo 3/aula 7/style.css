@@ -1,0 +1,58 @@
+body {
+    width: 500px;
+    height: 500px;
+    margin: 200px auto;
+    background-color: aqua;
+    font-size: 1rem;
+}
+
+h1 {
+    margin: 20px auto;
+    text-transform: uppercase;
+}
+
+table {
+    padding: 10px;
+    background-color: #000;
+    border-radius: 5px;
+}
+
+.resultado {
+    width: 204px;
+    height: 50px;
+    background-color: rgb(138, 134, 134);
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.botao {
+    background-color: rgb(138, 134, 134);
+    width: 50px;
+    height: 50px;
+    color: white;
+    border-radius: 5px;
+    margin: 0;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+.botao0 {
+    background-color: rgb(138, 134, 134);
+    width: 50px;
+    height: 50px;
+    color: white;
+    border-radius: 5px;
+    margin: 0;
+    opacity: 0.8;
+    font-weight: bold;
+    padding-left: 77px;
+    padding-right: 77px;
+    text-align: center
+}
+
+.botao:hover,
+.botao0:hover {
+    opacity: 1;
+}
+
