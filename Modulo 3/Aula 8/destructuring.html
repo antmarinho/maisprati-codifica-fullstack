@@ -5,41 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destructuring</title>
     <script>
-        let filmes = ['poderoso chefao','senhos dos aneis','harry potter','matrix','lalalala']
+        // let filmes = ['poderoso chefao','senhos dos aneis','harry potter','matrix','lalalala']
 
-        let [a,b, ,c = 'poderoso chefao'] = filmes
+        // let [a,b, ,c = 'poderoso chefao'] = filmes
 
-        let coisas = [['abacaxi','maca', 'hortela'],['computador','mouse','cadeira']]
+        // let coisas = [['abacaxi','maca', 'hortela'],['computador','mouse','cadeira']]
 
-        let[,[,x]] = coisas
+        // let[,[,x]] = coisas
 
-        console.log(coisas)
-        console.log(x)
+        // console.log(coisas)
+        // console.log(x)
 
-        let prod = {
-            nome: 'bike',
-            preco: 1000,
-            detalhes: {
-                frabricante: 'caloi',
-                modelo: 10
-            }
-        }
+        // let prod = {
+        //     nome: 'bike',
+        //     preco: 1000,
+        //     detalhes: {
+        //         frabricante: 'caloi',
+        //         modelo: 10
+        //     }
+        // }
 
-        let {nome,preco} = prod
+        // let {nome,preco} = prod
 
-        console.log(nome.preco)
+        // console.log(nome.preco)
 
-        let {nome: n, preco: p} = prod
+        // let {nome: n, preco: p} = prod
 
-        console.log(n,p)
+        // console.log(n,p)
 
-        let {nome: d, preco: k, desconto = 5} = prod
+        // let {nome: d, preco: k, desconto = 5} = prod
 
-        console.log(d,k,desconto)
+        // console.log(d,k,desconto)
 
-        let {detalhes: {frabricante,modelo}} = prod
+        // let {detalhes: {frabricante,modelo}} = prod
 
-        console.log(frabricante,modelo)
+        // console.log(frabricante,modelo)
+
+        // let arr = [10,20,30,40,50]
+
+        // function teste([a,b,,c]) {
+        //     console.log(a,b)
+        // }
+
+        // teste(arr)
+
+        // let obj = {
+        //     a:10,
+        //     b:20,
+        //     c:30,
+        //     d:40
+        // }
+
+        // function teste1({a,c,d}) {
+        //     console.log(c)
+        // }
+
+        // teste1(ob)
+
+        let arr = [10,20,30,40,50]
+
+        let [a, ...resto] = arr
 
     </script>
 </head>
