@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser object model</title>
+    <script>
+
+        // var janela;
+
+        // function abrir() {
+        //     janela = window.open('http://outlook.com','nova_janela', 'width=100')
+        // }
+        // function fechar() {
+        //     janela.close();
+        // }
+
+        // let height = window.screen.height
+        // let width = window.screen.width
+
+        // document.write("altura do navegador " + height + "</br>")
+        // document.write("largura do navegador " + width + "</br>")
+
+        // window.setTimeout(() => {
+        //     document.write('lalalala</br>')
+        // },2000); //so executa 1x depois so tempo
+
+        // let i = 10
+
+        // let c = window.setInterval(() => {
+        //     document.write(i + '</br>');
+        //     i--
+        //     if(i === 0) {
+        //         clearInterval(c)}
+        // },1000)
+
+        let i = 10 
+
+        let c = 7
+
+        let x = window.setInterval(() => {
+            document.write(c + ' x '+ i + ' = ' + c * i + '</br>')
+            i--
+            if(i < 0) 
+                clearInterval(x);
+        },500)
+
+    </script>
+</head>
+<body>
+    <!-- <button onclick="abrir()">abrir janela</button>
+    <button onclick="fechar()">fecha janela</button>
+    <button onclick="window.print()">imprimir pagina</button> -->
+
+    <!-- <button onclick="window.location.href = 'http://www.google.com'">acessar</button> -->
+
+
+</body>
+</html>

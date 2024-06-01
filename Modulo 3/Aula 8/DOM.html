@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS aplicando CSS</title>
+
+    <style>
+        .estilo {
+            background-color: #000;
+            width: 500px;
+            height: 500px;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+    <script>
+        // function trocar(cor) {
+        //    document.getElementById("quadrado").style.backgroundColor = cor
+           
+        // }
+        function change(cor) {
+           // document.getElementById("quadrado").style.backgroundColor = cor
+           document.getElementById("quadrado").className = 'estilo'
+        }
+    </script>
+
+
+</head>
+<body>
+    <button type="button" onclick="change()">trocar</button>
+    <!-- <button type="button" onclick="trocar('orange')">Laranja</button>
+    <button type="button" onclick="trocar('red')">red</button>
+    <button type="button" onclick="trocar('blue')">blue</button> -->
+    <div id="quadrado" style="border: 1px solid; width: 100px; height: 100px;">
+    <h1>texte</h1></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de erros</title>
+    <script>
+        let video = Array()
+
+        video[1] = Array()
+        video[1]['nome'] = 'fma'
+        video[1]['categoria'] = 'anime'
+
+        console.log(video)
+
+        function getVideo(video) {
+            try {
+                console.log(video[0]['nome'])
+                console.log('a aplicacao n morreu')
+            } catch (error) {
+                console.log('houve problema externo')
+
+                throw new Error ('house um erro ja estamos trabalhando na solucao')
+            } finally {
+                console.log('sempre passa por aqui')
+            }
+        }
+
+        function tratarErro(erro) {
+            console.log('o erro e ' + erro)
+        }
+
+        getVideo(video);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

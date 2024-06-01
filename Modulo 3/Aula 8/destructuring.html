@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        let filmes = ['poderoso chefao','senhos dos aneis','harry potter','matrix','lalalala']
+
+        let [a,b, ,c = 'poderoso chefao'] = filmes
+
+        let coisas = [['abacaxi','maca', 'hortela'],['computador','mouse','cadeira']]
+
+        let[,[,x]] = coisas
+
+        console.log(coisas)
+        console.log(x)
+
+        let prod = {
+            nome: 'bike',
+            preco: 1000,
+            detalhes: {
+                frabricante: 'caloi',
+                modelo: 10
+            }
+        }
+
+        let {nome,preco} = prod
+
+        console.log(nome.preco)
+
+        let {nome: n, preco: p} = prod
+
+        console.log(n,p)
+
+        let {nome: d, preco: k, desconto = 5} = prod
+
+        console.log(d,k,desconto)
+
+        let {detalhes: {frabricante,modelo}} = prod
+
+        console.log(frabricante,modelo)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
