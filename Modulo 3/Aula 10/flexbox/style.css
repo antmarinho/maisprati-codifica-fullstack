@@ -1,0 +1,29 @@
+.item {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    background: cadetblue;
+    border: 3px blue solid;
+    flex-grow: 1;
+    flex-basis: 100px;
+}
+
+#content {
+    background-color: gray;
+    height: 300px;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    /* flex-wrap: wrap-reverse; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+
+.item1 {
+    flex-shrink: 1;
+}
+
+.item4 {
+    flex-shrink: 2;
+    /* flex-basis: 300px; */
+    flex-grow: 3;
+}
