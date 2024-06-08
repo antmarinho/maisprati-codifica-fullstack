@@ -1635,10 +1635,52 @@ function questao42() {
 
 function questao43() {
 
+    function combinaProp(ob1,ob2) {
+
+        let newOb = {};
+
+        newOb = ob2;
+
+        for (let prop in ob1) {
+
+            let cont = 0;
+
+            for (let prop2 in ob2) {
+
+                if(prop2 === prop)
+                    cont++;
+            }
+
+            if(cont === 0)
+                ob2[prop] = ob1[prop];
+
+        }
+
+        return newOb;
+
+    }
+
+    let ob1 = {
+
+        nome: 'ana',
+        idade: 75,
+        profissao: 'engenheiro'
+    }
+
+    let ob2 = {
+
+        nome: 'rick',
+        cpf: '01247895235',
+        idade: 20,
+        cep: '51350610'
+
+    }
+
+    console.log(combinaProp(ob1,ob2))
 
 }
 
-questao43();
+//questao43();
 
 // ---------------- questao 44 -------------------
 
@@ -1712,6 +1754,49 @@ function questao45() {
 //questao45();
 
 // ---------------- questao 46 -------------------
+
+function questao46() {
+
+    function totalVendas(arr) {
+
+        let newOb = [];
+
+        let i = 0;
+
+        while(i < arr.length) {
+
+            let ob = arr[i];
+            let vendendo = '';
+
+            for (let j = i + 1; j < arr.length; j++) {
+                
+                if(ob.vendedor === arr[j].vendedor && arr[j] !== '') {
+
+                    ob.venda += arr[j].venda;
+                    vendendo = ob.vendedor
+                    arr[j].vendedor = '';
+                }
+
+            }
+
+            if (ob.vendedor !== '')
+                newOb.push(ob);
+
+            i++;
+
+        }
+
+        return newOb;
+
+    }
+
+    let arr = [{vendedor: 'jose', venda: 50.00}, {vendedor: 'ana', venda: 62.30}, {vendedor: 'jose', venda: 28.50}, {vendedor: 'rick', venda: 120.90}, {vendedor: 'ana', venda: 50.00}, {vendedor: 'jose', venda: 120.90}, {vendedor: 'maria', venda: 12.90}];
+
+    console.log(totalVendas(arr));
+
+}
+
+//questao46();
 
 // ---------------- questao 47 -------------------
 
