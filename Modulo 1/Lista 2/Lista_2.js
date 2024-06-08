@@ -1593,16 +1593,123 @@ function questao41() {
 
 function questao42() {
 
+    function novoOb(ob) {
+
+        let newoB = {};
+
+        propArray(ob);
+
+        function propArray(ob) {
+             
+            for (let propriedade in ob) {
+                
+                if(Array.isArray(ob[propriedade]))
+                    newoB[propriedade] = ob[propriedade];
+                  
+            }
+
+        }
+        
+        return  ob;
+        
+    }
+        
+    const dados = {
+
+        nome: 'wrs',
+        serie: [1,5,6],
+        idade: 20,
+        sexo: 'maosma',
+        filme: [3,4],
+        ododo: 'dfdf'
+
+    }
+        
+    console.log(novoOb(dados));
 
 }
 
-questao42();
+//questao42();
 
 // ---------------- questao 43 -------------------
 
+function questao43() {
+
+
+}
+
+questao43();
+
 // ---------------- questao 44 -------------------
 
+function questao44() {
+
+    function verificarPropriedades(objeto) {
+
+        let i =0;
+
+        for (let propriedade in objeto) {
+
+            if(typeof(objeto[propriedade]) === 'string')
+               i++
+                
+        }
+
+        console.log(`Existe ${i} propriedades string no objeto`);
+
+    }
+        
+    const pessoa = {
+
+        nome: 'Joao',
+        idade: 30,
+        profissao: 'Engenheiro'
+
+    };
+    
+    verificarPropriedades(pessoa);
+
+}
+
+//questao44();
+
 // ---------------- questao 45 -------------------
+
+function questao45() {
+
+    let arr = ['bola','casa','gato','bola','aviao','chocolate','gato','bola','carro','bingo','carro','casa','bola'];
+
+    let ob = {};
+
+    let i = 0;
+
+    while(i < arr.length) {
+    
+        let cont = 0;
+
+        let temp = arr[i];
+    
+        const arraySemDuplicados = arr.filter((x, indice, self) => {
+
+            if(x === arr[i])
+                cont++;
+        
+            if(/*self.indexOf(x) === indice &&*/ x !== arr[i])
+                return self.indexOf(x);
+
+        });
+
+        arr = arraySemDuplicados;
+        
+        ob[temp] = cont;
+
+    }
+
+    console.log(ob);
+
+}
+
+//questao45();
 
 // ---------------- questao 46 -------------------
 
