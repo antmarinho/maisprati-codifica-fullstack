@@ -1,0 +1,13 @@
+#box {
+    width: 400px;
+    height: 400px;
+    /* background: url(Woody_Woodpecker.png) no-repeat; */
+    /* background: linear-gradient(red,green,yellow); */
+    /* background: linear-gradient(0.25turn, #589,#522,#214); */
+    /* background: linear-gradient(217deg, rgb(0, 104, 173, .8), rgb(224, 149, 50, 0) 70.71%),
+                linear-gradient(127deg, rgb(0, 104, 173, .8), rgb(224, 149, 50, 0) 70.71%),
+                linear-gradient(50deg, rgb(0, 104, 173, .8), rgb(224, 149, 50, 0) 70.71%); */
+                background: repeating-linear-gradient(0.25turn, #589,#522,#214); 
+}
+
+

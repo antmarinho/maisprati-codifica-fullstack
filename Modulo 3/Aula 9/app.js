@@ -27,7 +27,7 @@ class Database {
 
     constructor() {
 
-        const id = localStorage.getItem('id')
+        let id = localStorage.getItem('id')
 
         if(id === null)
             localStorage.setItem('id',0)
@@ -36,13 +36,13 @@ class Database {
 
     getTasks() {
 
-        const tasks = Array()
+        let tasks = Array()
 
-        const id = localStorage.getItem('id')
+        let id = localStorage.getItem('id')
 
         for (let i = 1; i <= id; i++) {
            
-            const task = JSON.parse(localStorage.getItem(i))
+            let task = JSON.parse(localStorage.getItem(i))
             
             if(task === null)
                 continue
@@ -58,10 +58,41 @@ class Database {
 
     createTask(task) {
 
-        const id = getNextId();
+        let id = getNextId();
 
         localStorage.setItem(id, JSON.stringify(task))
         localStorage.setItem('id',id);
+
+    }
+
+    removeTask(id) {
+
+        localStorage.removeItem(id)
+
+    }
+
+    searchTasks(task) {
+
+        let arrFiltered = Array()
+
+        arrFiltered = this.getTasks()
+
+        if(task.year !== '')
+            arrFiltered = arrFiltered.filter(t => t.year === task.year)
+
+        if(task.month !== '')
+            arrFiltered = arrFiltered.filter(t => t.month === task.month)
+        
+        if(task.day !== '')
+            arrFiltered = arrFiltered.filter(t => t.day === task.day)
+
+        if(task.type !== '')
+            arrFiltered = arrFiltered.filter(t => t.type === task.type)
+
+        if(task.description !== '')
+            arrFiltered = arrFiltered.filter(t => t.description === task.description)
+
+        return arrFiltered
 
     }
 
@@ -71,7 +102,7 @@ const db = new Database()
 
 function getNextId() {
 
-    const nextId = localStorage.getItem('id');
+    let nextId = localStorage.getItem('id');
 
     return parseInt(nextId) + 1;
 
@@ -79,13 +110,13 @@ function getNextId() {
 
 function registerTask() {
 
-    const year = document.getElementById('year').value
-    const month = document.getElementById('month').value
-    const day = document.getElementById('day').value
-    const type = document.getElementById('type').value
-    const description = document.getElementById('description').value
+    let year = document.getElementById('year').value
+    let month = document.getElementById('month').value
+    let day = document.getElementById('day').value
+    let type = document.getElementById('type').value
+    let description = document.getElementById('description').value
 
-    const task = new Task(year, month, day, type, description)
+    let task = new Task(year, month, day, type, description)
 
     if(task.validateData())
         db.createTask(task)
@@ -124,11 +155,14 @@ function type(type) {
 
 }
 
-function loadTasks() {
-    
-    const tasks = db.getTasks()
+function loadTasks(tasks) {
 
-    const listTask = document.getElementById("list-task")
+    if(tasks === undefined)
+       tasks = db.getTasks()
+    
+    let listTask = document.getElementById("list-task")
+
+    listTask.innerHTML = ''
 
     tasks.forEach((t) => {
 
@@ -138,8 +172,41 @@ function loadTasks() {
         row.insertCell(1).innerHTML = `${type(parseInt(t.type))}`
         row.insertCell(2).innerHTML = `${t.description}`
 
+        const btn = document.createElement('button')
+
+        btn.className = 'btn btn-danger'
+        btn.id = t.id
+        btn.innerHTML = 'Delete'
+        btn.onclick = () => {
+            
+            let id = t.id
+
+            db.removeTask(id)
+
+            window.location.reload()
+
+        }
+
+        row.insertCell(3).append(btn)
+
     })
     
+}
+
+function searchTask() {
+
+    let year = document.getElementById('year').value
+    let month = document.getElementById('month').value
+    let day = document.getElementById('day').value
+    let type = document.getElementById('type').value
+    let description = document.getElementById('description').value
+
+    let task = new Task(year, month, day, type, description)
+
+    let tasks = db.searchTasks(task)
+
+    loadTasks(tasks)
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
