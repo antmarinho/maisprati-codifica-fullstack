@@ -1800,7 +1800,130 @@ function questao46() {
 
 // ---------------- questao 47 -------------------
 
+function questao47() {
+
+    function upCase(str) {
+
+        return str.toUpperCase();
+    }
+
+    function soma10(n) {
+
+        return n + 10;
+    }
+
+    function troca(n) {
+
+        return n ? false : true;
+    }
+
+    function divideArray2(arr) {
+
+        for (let i = 0; i < arr.length; i++)
+            arr[i] = (arr[i] / 2);
+
+        return arr;
+
+    }
+
+    function objeto(ob) {
+
+        for (const prop in ob) {
+        
+            if(typeof(ob[prop]) === 'string')
+                ob[prop] = upCase(ob[prop]);
+       }
+
+        return ob;
+
+    }
+
+    function aplicaFunc(ob) {
+
+        for (const prop in ob) {
+            
+            if(typeof(ob[prop]) === 'string') 
+                ob[prop] = upCase(ob[prop]);
+            else if(typeof(ob[prop]) === 'number') 
+                ob[prop] = soma10(ob[prop]);
+            else if(typeof(ob[prop]) === 'boolean') 
+                ob[prop] = troca(ob[prop]);
+            else if(Array.isArray(ob[prop]))
+                ob[prop] = divideArray2(ob[prop]);
+            else if (typeof(ob[prop]) === 'object')
+                ob[prop] = objeto(ob[prop]);
+
+        
+        }
+
+        return ob;
+
+    }
+
+    let ob = {
+
+        nome: 'jose',
+        idade: 15,
+        estuda: true,
+        notas: [1,2,3],
+        end: {
+            cep: '12345620',
+            complemento: 'avenida aaaa'
+        }
+
+    }
+
+    console.log(aplicaFunc(ob))
+
+}
+
+//questao47();
+
 // ---------------- questao 48 -------------------
+
+function questao48() {
+
+    function combinaOb(ob1,ob2) {
+
+        let newOb = ob1;
+
+        for (const prop in ob2) {
+                
+            if(ob1.hasOwnProperty(prop) === false)
+                newOb[prop] = ob2[prop];
+            else 
+                newOb[prop] += ob2[prop];
+
+        }
+
+        return newOb;
+    }
+
+    let ob1 = {
+
+        copo: 4,
+        bola: 40,
+        boneco: 81,
+        faca: 7
+
+    }
+
+    let ob2 = {
+
+        faca: 7,
+        copocadeira: 4,
+        escova: 52,
+        bola: 40,
+        copo: 23
+        
+    }
+
+    console.log(combinaOb(ob1,ob2));
+
+
+}
+
+//questao48();
 
 // ---------------- questao 49 -------------------
 
