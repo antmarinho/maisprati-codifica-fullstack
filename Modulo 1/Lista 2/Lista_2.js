@@ -1736,7 +1736,7 @@ function questao45() {
             if(x === arr[i])
                 cont++;
         
-            if(/*self.indexOf(x) === indice &&*/ x !== arr[i])
+            if(x !== arr[i])
                 return self.indexOf(x);
 
         });
@@ -1927,4 +1927,136 @@ function questao48() {
 
 // ---------------- questao 49 -------------------
 
+function questao49() {
+
+    function operacoesBancarias(arr) {
+
+        let newOb = {};
+
+        let i = 0;
+
+        while(i < arr.length) {
+
+            let ob = arr[i];
+            let tipo = arr[i].categoria;
+            let total = arr[i].valor;
+            let subtotal = new Array;
+            let ob2 = {};
+
+            subtotal.push(total);
+
+            for (let j = i + 1; j < arr.length; j++) {
+                
+                if(ob.categoria === arr[j].categoria && arr[j].categoria !== '') {
+
+                    tipo = ob.categoria;
+                    subtotal.push(arr[j].valor);
+                    total += arr[j].valor;
+                   
+                    arr[j].categoria = '';
+                }
+
+            }
+
+            if(tipo !== '') {
+
+                ob2.valores = subtotal;
+                ob2.totalOperacoes = total;
+            
+                newOb[tipo] = ob2;
+            
+            }   
+
+            i++;
+
+        }
+
+        return newOb;
+
+    }
+
+    let arr = [{id: 1, valor: 50.00, data: '10/05/2023', categoria: 'pix'}, {id: 2, valor: 150.00, data: '10/05/2024', categoria: 'boleto'}, {id: 3, valor: 510.00, data: '19/08/2024', categoria: 'pix'}, {id: 4, valor: 240.00, data: '10/05/2023', categoria: 'ted'}, {id: 5, valor: 50.00, data: '10/05/2023', categoria: 'ted'}, {id: 6, valor: 350.00, data: '10/05/2023', categoria: 'boleto'}, {id: 7, valor: 50.00, data: '10/05/2023', categoria: 'pix'}];
+
+    console.log(operacoesBancarias(arr));
+
+}
+
+//questao49();
+
 // ---------------- questao 50 -------------------
+
+function questao50() {
+
+    function addHotel(id) {
+
+
+        return ob = {id: id + 1};
+
+    }
+
+
+    hoteis = new Array;
+    reservas = new Array;
+
+    // primeira posicao vai ser o contador pra gerar o ID unico
+    hoteis.push(0);
+    reservas.push(0);
+
+    let cond = true;
+
+    while(cond) {
+
+        console.log();
+        console.log(' [1] - Adicionar Hotel');
+        console.log(' [2] - Buscar hotel por cidade');
+        console.log(' [3] - Fazer reserva');
+        console.log(' [4] - Cancelar reserva');
+        console.log(' [5] - Listar reservas');
+        console.log(' [6] - Sair');
+        console.log();
+
+        let op = parseInt(prompt('Digite a opcao desejada '));
+
+        switch (op) {
+
+            case 1:
+
+                hoteis.push(addHotel(hoteis[0]));
+                hoteis[0]++;
+
+            break;
+
+            case 2:
+
+            break;
+
+            case 3:
+
+            break;
+
+            case 4:
+
+            break;
+
+            case 5:
+
+            break;
+
+            case 6:
+
+                cond = false;
+
+            break;
+        
+            default:
+
+                console.log("Opcao invalida");
+
+            break;
+        }
+
+    }
+
+}
+
+questao50();
