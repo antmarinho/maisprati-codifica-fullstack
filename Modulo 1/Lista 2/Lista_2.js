@@ -1989,11 +1989,147 @@ function questao50() {
 
     function addHotel(id) {
 
+        let newHotel = {};
 
-        return ob = {id: id + 1};
+        newHotel.id = id + 1;
+        newHotel.nome = prompt("Digite o nome do hotel: ");
+        newHotel.cidade = prompt("Digite a cidade do hotel: ");
+        newHotel.quartosTotal = parseInt(prompt("Digite a quantidade de quartos q existe no hotel: "));
+        newHotel.quartosDisponivel = parseInt(prompt("Digite quantos quartos estao disponiveis no hotel: "));
+
+        console.log();
+        console.log("Hotel adicionado com sucesso");
+
+        return newHotel;
 
     }
 
+    function buscarHotel(cidade,hoteis) {
+
+        let j = 1;
+
+        console.log();
+        console.log(`Hoteis disponiveis - ${cidade.toUpperCase()}`);
+        console.log();
+
+        for (let i = 1; i < hoteis.length; i++) {
+            
+            if(hoteis[i].cidade === cidade) {
+
+                console.log(`${j}° - ${hoteis[i].nome}`);
+                
+                j++;
+            
+            }
+            
+        }
+
+        if(j === 1)
+            console.log("Nao existe hoteis nessa cidade");
+
+    }
+
+    function listarHoteis(hoteis) {
+
+        for (let i = 1; i < hoteis.length; i++)
+            console.log(`[${i}] - ${hoteis[i].nome} QTD quartos disponiveis ${hoteis[i].quartosDisponivel}`);
+
+    }
+
+    function fazerReserva(id,hoteis) {
+
+        let newReserva = {};
+
+        console.log();
+
+        let cliente = prompt("Digite seu nome para reservar um quarto ");
+
+        console.log();
+        listarHoteis(hoteis);
+    
+        console.log();
+        let idHotel = parseInt(prompt("Digite o numero do hotel desejado "));
+        console.log();
+
+        
+        if(idHotel >= hoteis.length || idHotel < 1) {
+
+            console.log("Opcao invalida");
+
+            return;
+
+        } else {
+
+            if(hoteis[idHotel].quartosDisponivel > 0) {
+
+                hoteis[idHotel].quartosDisponivel--;
+                newReserva.id = id + 1;
+                newReserva.idHotel = idHotel;
+                newReserva.cliente = cliente;
+
+                console.log();
+                console.log("Reserva feita com sucesso");
+
+            } else 
+                console.log("Hotel com todos quartos reservados");
+
+        }
+
+        return newReserva;
+    }
+
+    function listarReserva(reservas,hoteis) {
+
+        console.log();
+        console.log("Listas das reservas");
+        console.log();
+
+        if(reservas[0] === 0) 
+            console.log("Nao existe reservas");
+        else {
+
+            for (let i = 1; i < reservas.length; i++) {
+
+                console.log(`[${i}] - ${reservas[i].cliente} reservou um quarto no ${hoteis[reservas[i].idHotel].nome} localizado ${hoteis[reservas[i].idHotel].cidade}`);
+            
+            }
+        }
+
+    }
+
+    function cancelarReserva(reservas,hoteis,x) {
+
+        listarReserva(reservas,hoteis);
+
+        console.log();
+
+        let op = parseInt(prompt("Digite a opcao da reserva que deseja cancelar "));
+
+        if(op >= reservas.length || op < 1) {
+
+            console;log("Opcao invalida");
+
+            return;
+
+        } else {
+
+            let idHotel = reservas[op].idHotel;
+
+            hoteis[idHotel].quartosDisponivel++;
+
+            filtroReserva = reservas.filter(reserva => reserva.id !== op);
+
+            reservas[0]--;
+            hoteis[0]--;
+
+            console;log();
+            console.log("Reserva cancelada com sucesso");
+
+            return filtroReserva;
+
+        }
+
+    }
 
     hoteis = new Array;
     reservas = new Array;
@@ -2016,6 +2152,7 @@ function questao50() {
         console.log();
 
         let op = parseInt(prompt('Digite a opcao desejada '));
+        console.log()
 
         switch (op) {
 
@@ -2028,17 +2165,38 @@ function questao50() {
 
             case 2:
 
+                let cidade = prompt("Digite uma cidade para saber quais hoteis existem ");
+
+                buscarHotel(cidade,hoteis);
+
             break;
 
             case 3:
+
+                let reserva = fazerReserva(reservas[0],hoteis);
+                
+                if(reserva !== undefined) {
+
+                    if(Object.keys(reserva).length !== 0) {
+
+                        reservas.push(reserva);
+                        reservas[0]++;
+
+                    }
+
+                }
 
             break;
 
             case 4:
 
+                reservas = cancelarReserva(reservas,hoteis);
+
             break;
 
             case 5:
+
+                listarReserva(reservas,hoteis);
 
             break;
 
@@ -2059,4 +2217,4 @@ function questao50() {
 
 }
 
-questao50();
+//questao50();
