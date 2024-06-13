@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filmes>
+    <filme id="1">
+        <titulo>Kill Bill</titulo>
+        <resumo>
+            A Noiva (Uma Thurman) é uma perigosa assassina que trabalhava em um grupo, liderado por Bill (David Carradine), composto principalmente por mulheres. Grávida, ela decide escapar dessa vida de violência e decide se casar, mas no dia da cerimônia seus companheiros de trabalho se voltam contra ela, quase a matando.
+        </resumo>
+        <genero>acao</genero>
+        <genero>aventura</genero>
+        <elenco>
+            <ator>Lazar ramos</ator>
+            <ator>Lazar ramos</ator>
+        </elenco>
+    </filme>
+    <filme id="2">
+        <titulo>A Viagem de Chihiro</titulo>
+        <resumo>
+            Chihiro e seus pais estão se mudando para uma cidade diferente. A caminho da nova casa, o pai decide pegar um atalho. Eles se deparam com uma mesa repleta de comida, embora ninguém esteja por perto. Chihiro sente o perigo, mas seus pais começam a comer. Quando anoitece, eles se transformam em porcos. Agora, apenas Chihiro pode salvá-los.
+        </resumo>
+        <genero>acao</genero>
+        <genero>aventura</genero>
+        <elenco>
+            <ator>Lazar ramos</ator>
+            <ator>Lazar ramos</ator>
+        </elenco>
+    </filme>
+    <filme id="3">
+        <titulo>Vingadores Guerra infinita</titulo>
+        <resumo>
+            Homem de Ferro, Capitão América, Thor, Hulk e os Vingadores se unem para combater o maligno Thanos. Em uma missão para coletar todas as seis pedras infinitas, Thanos planeja usá-las para infligir sua vontade maléfica sobre a humanidade.
+        </resumo>
+        <genero>acao</genero>
+        <genero>aventura</genero>
+        <elenco>
+            <ator>Lazar ramos</ator>
+            <ator>Lazar ramos</ator>
+        </elenco>
+    </filme>
+</filmes>

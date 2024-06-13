@@ -1,0 +1,40 @@
+{
+    "filmes": [
+        {
+            "titulo": "tropa de elite",
+            "resumo": "dfosdifsdfopsdmfopsmdfpsmdfspdmfdopsf",
+            "generos": [
+                {"genero": "policial"},
+                {"genero": "acao"},
+                {"genero": "investigacao"}
+            ],
+            "elenco": [
+                {"ator": "wagner moura"}
+            ]
+        },
+        {
+            "titulo": "tropa de elite",
+            "resumo": "dfosdifsdfopsdmfopsmdfpsmdfsdmfdopsf",
+            "generos": [
+                {"genero": "policial"},
+                {"genero": "acao"},
+                {"genero": "investigacao"}
+            ],
+            "elenco": [
+                {"ator": "wagner moura"}
+            ]
+        },
+        {
+            "titulo": "tropa de elite",
+            "resumo": "dfosdifsdfopsdmfopsmdfpsmdfspdmfdopsf",
+            "generos": [
+                {"genero": "policial"},
+                {"genero": "acao"},
+                {"genero": "investigacao"}
+            ],
+            "elenco": [
+                {"ator": "wagner moura"}
+            ]
+        }
+    ]
+}
