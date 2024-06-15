@@ -3,63 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>generators</title>
+    <title>Generators</title>
 
     <script>
-        // function* myGenerator() {
+      function* chat(){
+        let opcao = yield 'Olá, tudo bem?'
 
-        //     let i = 0;
+        if(opcao === 'Sim') {
+            yield 'Ótimo'
 
-        //     while(true) {
+            opcao = yield 'Como eu posso te ajudar? Quer uma piada?'
 
-        //         yield i++;
-        //     }
-
-        // }
-
-        // let generator = myGenerator()
-        // let generatorValue = generator.next()
-
-        function* chat() {
-
-            let opcao = yield 'e ai tudo bem'
-
-            if(opcao === 'sim' ) {
-
-                yield 'otimo'
-                
-                opcao = yield 'queru ma piada ?'
-
-                if(opcao === 'sim') {
-                    let piada
-                    fetch('./piadas.json').then(resposta => resposta.json()).then(piadas => {
-                        piada = piadas[Math.floor((Math.random() * 4))]
-                        console.log(piada.piada)
-                    })
-                }
+            if(opcao === 'Sim'){
+                let piada
+                fetch('./piadas.json').then(resposta => resposta.json()).then(piadas => {
+                    piada = piadas[Math.floor((Math.random() * 10))]
+                    console.log(piada.piada)
+                })
 
                 setTimeout(() => {
                     console.log(piada.resposta)
-                    console.log('muito boa a piada')
-                },3000)
+                    console.log('Muito boa a piada! Ri muito mesmo, acredite.')
+                }, 2000)
             }
-
         }
+      }
 
-        let chat1 = chat()
+      let chat1 = chat()
 
-        function iniciarCHat() {
-
-            let resposta = document.getElementById('resposta').value
-            let iteracao = chat1.next(resposta)
-            console.log(iteracao)
-
-        }
-        
+      function iniciarChat() {
+        let resposta = document.getElementById('resposta').value 
+        let iteracao = chat1.next(resposta)
+        console.log(iteracao)
+      }
     </script>
 </head>
 <body>
-    <button type="button" onclick="iniciarCHat()">avancar</button>
-    resposta: <input type="text" id="resposta">
+    <button type="button" onclick="iniciarChat()">Avançar</button>
+    Resposta: <input type="text" id="resposta">
 </body>
 </html>
