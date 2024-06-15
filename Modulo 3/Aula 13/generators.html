@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>generators</title>
+
+    <script>
+        // function* myGenerator() {
+
+        //     let i = 0;
+
+        //     while(true) {
+
+        //         yield i++;
+        //     }
+
+        // }
+
+        // let generator = myGenerator()
+        // let generatorValue = generator.next()
+
+        function* chat() {
+
+            let opcao = yield 'e ai tudo bem'
+
+            if(opcao === 'sim' ) {
+
+                yield 'otimo'
+                
+                opcao = yield 'queru ma piada ?'
+
+                if(opcao === 'sim') {
+                    let piada
+                    fetch('./piadas.json').then(resposta => resposta.json()).then(piadas => {
+                        piada = piadas[Math.floor((Math.random() * 4))]
+                        console.log(piada.piada)
+                    })
+                }
+
+                setTimeout(() => {
+                    console.log(piada.resposta)
+                    console.log('muito boa a piada')
+                },3000)
+            }
+
+        }
+
+        let chat1 = chat()
+
+        function iniciarCHat() {
+
+            let resposta = document.getElementById('resposta').value
+            let iteracao = chat1.next(resposta)
+            console.log(iteracao)
+
+        }
+        
+    </script>
+</head>
+<body>
+    <button type="button" onclick="iniciarCHat()">avancar</button>
+    resposta: <input type="text" id="resposta">
+</body>
+</html>
