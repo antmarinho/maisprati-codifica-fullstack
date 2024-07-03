@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+    <title>Projeto</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/scrips.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="" class="logo">
+                <h1>
+                    <span></span>
+                    <span class="punho">&#x1f44a</span>
+                </h1>
+            </a>
+            <ul>
+                <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Servicos</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Clientes</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Contato</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Trabalhe conoscos</a></li>
+            </ul>
+            <div class="theme-switch">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <ion-icon name="partly-sunny-outline" class="sun"></ion-icon>
+                    <ion-icon name="moon-outline" class="moon"></ion-icon>
+                    <div class="switcher"></div>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="intro-text">
+                <h1>indique aqui o <span>titulo</span> da secao</h1>
+                <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam minima atque quia inventore. Expedita ipsam voluptatem molestiae exercitationem incidunt omnis quaerat placeat, explicabo officia commodi quisquam repellat laudantium, eius doloremque?</p>
+                <a class="btn blue" href="">inscreva-se</a>
+                <a class="btn red" href="">saiba mais</a>
+            </div>
+            <div class="iframe">
+                <iframe src="https://www.youtube.com/watch?v=0nl8m5QA7ls" frameborder="0" width="560" height="315" title="youtube video"></iframe>
+            </div>
+            <div class="stand-1"></div>
+            <div class="stand-2"></div>
+        </section>
+
+        <!-- <section class="carrosel">
+
+            <ul class="slider">
+                <li>
+                      <input type="radio" id="slide1" name="slide" checked>
+                      <label for="slide1"></label>
+                      <img src="assets/img/imagem1.jpg" />
+                </li>
+                <li>
+                      <input type="radio" id="slide2" name="slide">
+                      <label for="slide2"></label>
+                      <img src="assets/img/imagem2.jpg" />
+                </li>
+                <li>
+                      <input type="radio" id="slide3" name="slide">
+                      <label for="slide3"></label>
+                      <img src="assets/img/imagem3.jpg" />
+                </li>
+            </ul>
+
+        </section> -->
+        <section class="secondSection grid-one">
+            <div class="mainContent grid-one-content">
+                <h2 class="grid-heading">my grid</h2>
+                <p class="grid-description">descricao</p>
+
+                <div class="grid">
+                    <article>
+                        <h3>titulo 1</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa aliquid ipsam enim aspernatur eos facere rem alias repudiandae consequuntur, possimus architecto maxime. Aliquid autem nam ratione, quisquam maiores asperiores.</p>
+                    </article>
+                    <article>
+                        <h3>titulo 2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa aliquid ipsam enim aspernatur eos facere rem alias repudiandae consequuntur, possimus architecto maxime. Aliquid autem nam ratione, quisquam maiores asperiores.</p>
+                    </article>
+                    <article>
+                        <h3>titulo 3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa aliquid ipsam enim aspernatur eos facere rem alias repudiandae consequuntur, possimus architecto maxime. Aliquid autem nam ratione, quisquam maiores asperiores.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="terceiraSection">
+            <div class="carousel">
+                <div class="faixa-esquerda faixa">
+                    <button class="flecha" onclick="back()"> &lt; </button>
+                </div>
+                <div class="divImage-left">
+                    <img id="space1" src="assets/img/imagem1.jpg" alt="">
+                </div>
+                <div class="divImage-left">
+                    <img id="space2" src="assets/img/imagem2.jpg" alt="">
+                </div>
+                <div class="divImage-left">
+                    <img id="space3" src="assets/img/imagem3.jpg" alt="">
+                </div>
+                <div class="faixa-direita faixa">
+                    <button class="flecha" onclick="next()"> &gt; </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h2>lalalalal</h2>
+    </footer>
+</body>
+</html>

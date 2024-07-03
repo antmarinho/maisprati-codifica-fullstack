@@ -7,5 +7,6 @@
 - Módulo 3 - Fundamentos do Desenvolvimento Front-end
   -   HTML, CSS, JS e BOOTSTRAP
 
+- Módulo 4 - React Js
 
 
