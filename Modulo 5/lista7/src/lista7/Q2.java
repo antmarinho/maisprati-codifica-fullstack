@@ -39,26 +39,24 @@ public class Q2 {
 		
 		do {
 			
-			System.out.println("Escolha a opcao desejada");
-			System.out.println("[1] - Acessar Url");
-			System.out.println("[2] - Ver historico");
-			System.out.println("[3] - Sair");
-			
-			op = in.nextInt();
-			
-			switch (op) {
-			
-			case 1 -> acessarUrl(url);
-			
-			case 2 -> url.forEach(System.out::println);
-			
-			case 3 -> x = true; 
-			
-			default ->
-			
-				System.out.println("Valor invalido: ");
+				System.out.println("Escolha a opcao desejada");
+				System.out.println("[1] - Acessar Url");
+				System.out.println("[2] - Ver historico");
+				System.out.println("[3] - Sair");
 				
-			}
+				op = in.nextInt();
+				
+				switch (op) {
+				
+					case 1 -> acessarUrl(url);
+					
+					case 2 -> url.forEach(System.out::println);
+					
+					case 3 -> x = true; 
+					
+					default -> System.out.println("Valor invalido: ");
+						
+				}
 			
 			
 		} while (!x);

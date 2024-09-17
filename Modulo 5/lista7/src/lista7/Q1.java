@@ -86,32 +86,30 @@ public class Q1 {
 		
 		do {
 			
-			System.out.println("Escolha a opcao desejada");
-			System.out.println("[1] - Adicionar tafera");
-			System.out.println("[2] - Remover tafera");
-			System.out.println("[3] - Marcar como concluido");
-			System.out.println("[4] - Listar tarefas");
-			System.out.println("[5] - Sair");
-			
-			op = in.nextInt();
-			
-			switch (op) {
-			
-			case 1 -> tar.add(addTarefa());
-			
-			case 2 -> tar.remove(removerTarefa(tar));
-			
-			case 3 -> marcarTarefa(tar);
-			
-			case 4 -> tar.forEach(System.out::println);
-			
-			case 5 -> x = true; 
-			
-			default ->
-			
-				System.out.println("Valor invalido: ");
+				System.out.println("Escolha a opcao desejada");
+				System.out.println("[1] - Adicionar tafera");
+				System.out.println("[2] - Remover tafera");
+				System.out.println("[3] - Marcar como concluido");
+				System.out.println("[4] - Listar tarefas");
+				System.out.println("[5] - Sair");
 				
-			}
+				op = in.nextInt();
+				
+				switch (op) {
+				
+					case 1 -> tar.add(addTarefa());
+					
+					case 2 -> tar.remove(removerTarefa(tar));
+					
+					case 3 -> marcarTarefa(tar);
+					
+					case 4 -> tar.forEach(System.out::println);
+					
+					case 5 -> x = true; 
+					
+					default -> System.out.println("Valor invalido: ");
+					
+				}
 			
 			
 		} while (!x);

@@ -55,11 +55,11 @@ public class Q3 {
 				
 				switch (op) {
 				
-				case 1 -> escrever(texto);
-				
-				case 2 -> desfazerTexto(texto);
-				
-				case 3 -> x = true; 
+					case 1 -> escrever(texto);
+					
+					case 2 -> desfazerTexto(texto);
+					
+					case 3 -> x = true; 
 			
 				
 			}
