@@ -1,3 +1,3 @@
 # Lista 7
 
-- Ainda falta concluir as questoes
+- Lista de exercicio em java sobre estrutura de dados
