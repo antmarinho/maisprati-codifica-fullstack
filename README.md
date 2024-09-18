@@ -11,3 +11,5 @@
   
 - Módulo 5 - Java
 
+- Módulo 6 - Banco de Dados SQL
+
