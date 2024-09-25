@@ -4,4 +4,4 @@
 
 # Lista 8
 
-- Lista de exercicio em java sobre OO (falta concluir questao 7 e 8)
+- Lista de exercicio em java sobre OO (falta concluir questao 8)
