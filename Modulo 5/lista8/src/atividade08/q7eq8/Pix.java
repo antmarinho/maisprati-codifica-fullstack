@@ -1,5 +1,7 @@
 package atividade08.q7eq8;
 
+import java.util.Scanner;
+
 public class Pix extends FormaPagamento {
 	
 	private String cpf;
@@ -12,14 +14,50 @@ public class Pix extends FormaPagamento {
 	}
 
 	@Override
-	public void processarPagamento(double valor) {
-		// TODO Auto-generated method stub
+	public boolean processarPagamento(double valor) {
+		
+		double calculo;
+		
+		calculo = this.saldo - valor;
+		
+		if(calculo >= 0) {
+			
+			this.saldo = calculo;
+			return true;
+			
+		}
+		
+		return false;
 		
 	}
 
 	@Override
 	public void validarPagamento() {
-		// TODO Auto-generated method stub
+		
+		String pix;
+		boolean verif = false;
+		
+		Scanner in = new Scanner(System.in);
+		Scanner inNum = new Scanner(System.in);
+		
+		System.out.println("Digite o cpf do pix");
+			pix = in.nextLine();
+			
+		if(this.cpf.equalsIgnoreCase(pix)) {
+			
+			System.out.println("Digite o valor do pagamento ");
+				verif = processarPagamento(inNum.nextDouble());
+				
+			if(verif)
+				System.out.println("Pix realizado com sucesso");
+			else 
+				System.out.println("erro no pagamento saldo insuficiente");
+			
+		}
+		
+		else
+			System.out.println("numero invalido");
+		
 		
 	}
 	

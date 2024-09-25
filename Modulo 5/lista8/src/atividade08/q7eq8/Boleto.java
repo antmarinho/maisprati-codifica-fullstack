@@ -1,5 +1,7 @@
 package atividade08.q7eq8;
 
+import java.util.Scanner;
+
 public class Boleto extends FormaPagamento {
 	
 	private String numBoleto;
@@ -12,14 +14,43 @@ public class Boleto extends FormaPagamento {
 	}
 
 	@Override
-	public void processarPagamento(double valor) {
-		// TODO Auto-generated method stub
+	public boolean processarPagamento(double valor) {
 		
+		if(valor == this.valorBoleto)
+			return true;
+		
+		return false;
+			
 	}
 
 	@Override
 	public void validarPagamento() {
-		// TODO Auto-generated method stub
+		
+		String num;
+		boolean verif = false;
+		
+		Scanner in = new Scanner(System.in);
+		Scanner inNum = new Scanner(System.in);
+		
+		System.out.println("Digite o numero do boleto");
+			num = in.nextLine();
+			
+		if(this.numBoleto.equalsIgnoreCase(num)) {
+			
+			System.out.println("O valor do boleto e R$ = " + this.valorBoleto);
+			System.out.println("Envie o valor");
+				verif = processarPagamento(inNum.nextDouble());
+				
+			if(verif)
+				System.out.println("pagamento realizado com sucesso");
+			else 
+				System.out.println("erro no pagamento");
+			
+		}
+		
+		else
+			System.out.println("numero invalido");
+		
 		
 	}
 	

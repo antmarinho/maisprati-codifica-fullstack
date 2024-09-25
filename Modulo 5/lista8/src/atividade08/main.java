@@ -3,6 +3,8 @@ package atividade08;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
+
 import atividade08.q1eq2.Produto;
 import atividade08.q3eq4.Desenvolvedor;
 import atividade08.q3eq4.Funcionario;
@@ -15,6 +17,9 @@ import atividade08.q5eq6.Gato;
 import atividade08.q5eq6.IMeioTransporte;
 import atividade08.q5eq6.Trem;
 import atividade08.q5eq6.Vaca;
+import atividade08.q7eq8.Boleto;
+import atividade08.q7eq8.CartaoCredito;
+import atividade08.q7eq8.Pix;
 
 public class main {
 
@@ -90,6 +95,34 @@ public class main {
 		
 		for(Animal a : animal) 
 			a.emitirSom(); */
+		
+		// teste questao 7
+		
+		/*int op;
+		
+		Boleto b = new Boleto("123456789", 150.80);
+		CartaoCredito c = new CartaoCredito("456895233", 2500);
+		Pix p = new Pix("12378945620", 1000);
+			
+		Scanner in = new Scanner(System.in);
+		Scanner inNum = new Scanner(System.in);
+		
+		System.out.println("escolha a forma de pagamento");
+		System.out.println("[1] - para Boleto");
+		System.out.println("[2] - para Cartao de credito");
+		System.out.println("[3] - para Pix");
+			op = inNum.nextInt();
+			
+		switch (op) {
+		
+			case 1 -> b.validarPagamento();
+			case 2 -> c.validarPagamento();
+			case 3 -> p.validarPagamento();
+			
+			default -> System.out.println("Valor invalido");
+				
+		}*/
+		
 
 	}
 
