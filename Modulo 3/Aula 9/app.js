@@ -28,6 +28,8 @@ class Database {
     constructor() {
 
         let id = localStorage.getItem('id')
+		
+		
 
         if(id === null)
             localStorage.setItem('id',0)
