@@ -36,10 +36,11 @@ public class UserService {
 			user.setNome(userDTO.getUser());
 			user.setEmail(userDTO.getEmail());
 			user.setRole(userDTO.getRole());
+			user.setPass(userDTO.getPass());
 			
 			userRepository.save(user);
 			
-			return userDTO;
+			return convertToDTO(user);
 		}
 		
 		public UserDTO updateUser(int id, UserDTO userDTO) {
@@ -53,6 +54,7 @@ public class UserService {
 				user.setNome(userDTO.getUser());
 				user.setEmail(userDTO.getEmail());
 				user.setRole(userDTO.getRole());
+				user.setPass(userDTO.getPass());
 			
 				userRepository.save(user);
 				
@@ -70,7 +72,7 @@ public class UserService {
 		
 		private UserDTO convertToDTO(User user) {
 			
-			UserDTO userDTO = new UserDTO(user.getId(),user.getNome(),user.getEmail(),user.getRole());
+			UserDTO userDTO = new UserDTO(user.getId(),user.getNome(),user.getEmail(),user.getRole(),user.getPass());
 			
 			return userDTO;
 			

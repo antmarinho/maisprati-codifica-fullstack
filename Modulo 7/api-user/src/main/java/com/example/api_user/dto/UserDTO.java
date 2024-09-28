@@ -6,14 +6,16 @@ public class UserDTO {
 	private String user;
 	private String email;
 	private String role;
+	private String pass;
 	
 	
-	public UserDTO(int id, String user, String email, String role) {
+	public UserDTO(int id, String user, String email, String role, String pass) {
 
 		this.id = id;
 		this.user = user;
 		this.email = email;
 		this.role = role;
+		this.pass = pass;
 	}
 	
 
@@ -47,6 +49,14 @@ public class UserDTO {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 	
 
