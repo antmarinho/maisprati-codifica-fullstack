@@ -1,5 +1,7 @@
 CREATE DATABASE atividade10;
 
+------------------------------------------------------------------------------------------
+
 CREATE TABLE alunos (
 
 	id_aluno INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -34,6 +36,8 @@ CREATE TABLE matricula (
 
 );
 
+------------------------------------------------------------------------------------------
+
 INSERT INTO `alunos`(`nome`, `curso`, `nivel`, `idade`) VALUES 
 ('ana','quimica','graduacao','20'),
 ('jose','fisica','graduacao','18'),
@@ -66,7 +70,7 @@ INSERT INTO `matricula`(`aluno_fk`, `turma_fk`, `nota1`, `nota2`, `nota3`, `nota
 ('2','1','2','5','8','7','5');
 
 
-----------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
 -- 1
 
