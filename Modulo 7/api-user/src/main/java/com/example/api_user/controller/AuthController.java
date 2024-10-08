@@ -34,17 +34,11 @@ public class AuthController {
 	@PostMapping("/login")
 	public String login(@RequestParam String username, @RequestParam String pass) {
 		
-		try {
-			
-				Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, pass));
-				
-				UserDetails user = (UserDetails) authentication.getCredentials();
-				
-				return jwtTokenProvider.generateToken(user);
-			
-		} catch (AuthenticationException e) {
-			throw new RuntimeException("invalid credentials");
-		}
+		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, pass));
+		
+		UserDetails user = (UserDetails) authentication.getCredentials();
+		
+		return jwtTokenProvider.generateToken(user);
 	}
 
 }

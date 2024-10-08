@@ -13,3 +13,4 @@
 
 - Módulo 6 - Banco de Dados SQL
 
+- Módulo 7 - Java Spring Boot
