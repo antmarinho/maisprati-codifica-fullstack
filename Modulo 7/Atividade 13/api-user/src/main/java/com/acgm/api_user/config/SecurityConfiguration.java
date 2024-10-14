@@ -31,8 +31,7 @@ public class SecurityConfiguration {
                            .authorizeHttpRequests(authorize -> authorize
                         		   .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                                    .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
-                                   .requestMatchers(HttpMethod.POST, "/auth/refresh-token").permitAll()
-                                   .requestMatchers(HttpMethod.GET, "/user").hasRole("ADMIN")
+                                   .requestMatchers(HttpMethod.GET, "/user/**").hasRole("ADMIN")
                                    .anyRequest().authenticated())
                            .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                            .build();

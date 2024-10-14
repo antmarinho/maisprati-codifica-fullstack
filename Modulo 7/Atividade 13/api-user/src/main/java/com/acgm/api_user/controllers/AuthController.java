@@ -1,7 +1,6 @@
 package com.acgm.api_user.controllers;
 
 import com.acgm.api_user.dto.AuthDTO;
-import com.acgm.api_user.dto.RefreshTokenDTO;
 import com.acgm.api_user.dto.TokenDTO;
 import com.acgm.api_user.dto.RegisterDTO;
 import com.acgm.api_user.models.User;
@@ -37,17 +36,7 @@ public class AuthController {
 
         String token = tokenService.generateToken((User) auth.getPrincipal());
 
-        String refreshToken = tokenService.generateRefreshToken((User) auth.getPrincipal());
-
-        return ResponseEntity.ok(new TokenDTO(token,refreshToken));
-    }
-
-    @PostMapping("/refresh-token")
-    public ResponseEntity refreshtoken(@RequestBody @Validated RefreshTokenDTO refreshTokenDTO) {
-
-        TokenDTO tokenDTO = tokenService.getRefreshToken(refreshTokenDTO.refreshToken());
-
-        return ResponseEntity.ok(new TokenDTO(tokenDTO.token(),tokenDTO.refreshToken()));
+        return ResponseEntity.ok(new TokenDTO(token));
     }
 
     @PostMapping("/register")

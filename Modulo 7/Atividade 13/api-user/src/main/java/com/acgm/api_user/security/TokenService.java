@@ -27,9 +27,6 @@ public class TokenService {
     @Value("${security.jwt.token.expiration}")
     private Integer expiration;
 
-    @Value("${security.jwt.refresh-token.expiration}")
-    private Integer refreshExpiration;
-
     @Autowired
     private UserRepository userRepository;
 
@@ -52,49 +49,6 @@ public class TokenService {
 
             throw new RuntimeException("error generating token", jwtCreationException);
         }
-
-    }
-
-    public String generateRefreshToken(User user) {
-
-        try {
-
-            Algorithm algorithm = Algorithm.HMAC256(secret);
-
-            String RefreshToken = JWT.create()
-                    .withIssuer("auth-api")
-                    .withSubject(user.getLogin())
-                    .withExpiresAt(genExpirationDate(refreshExpiration))
-                    .sign(algorithm);
-
-            return RefreshToken;
-
-        } catch (JWTCreationException jwtCreationException) {
-
-            throw new RuntimeException("error generating refresh-token", jwtCreationException);
-        }
-
-    }
-
-    public TokenDTO getRefreshToken(String refreshToken) {
-
-        String login = validateToken(refreshToken);
-
-        UserDetails user = userRepository.findByLogin(login);
-
-        if(user == null)
-            throw new RuntimeException();
-
-        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user,null,user.getAuthorities());
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-
-        String token = generateToken((User) user);
-        String newRefreshToken = generateRefreshToken((User) user);
-
-        TokenDTO tokenDTO = new TokenDTO(token,newRefreshToken);
-
-        return tokenDTO;
 
     }
 
