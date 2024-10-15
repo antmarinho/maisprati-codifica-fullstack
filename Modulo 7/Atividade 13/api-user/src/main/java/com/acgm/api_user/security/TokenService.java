@@ -1,6 +1,5 @@
 package com.acgm.api_user.security;
 
-import com.acgm.api_user.dto.TokenDTO;
 import com.acgm.api_user.models.User;
 import com.acgm.api_user.repositories.UserRepository;
 import com.auth0.jwt.JWT;
@@ -9,9 +8,6 @@ import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
