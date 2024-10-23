@@ -1,0 +1,18 @@
+access-token:
+  private: ${access-refresh-token-keys/access-token-private.key}
+  public: ${access-refresh-token-keys/access-token-public.key}
+
+refresh-token:
+  private: ${access-refresh-token-keys/refresh-token-private.key}
+  public: ${access-refresh-token-keys/refresh-token-public.key}
+spring:
+  profiles:
+    active: dev
+
+data:
+  mongodb:
+    uri: mongodb://${MONGODB_HOST}:${MONGODB_PORT}/?authSource=${MONGODB_DB}
+    database: ${MONGODB_DB}
+logging:
+  level:
+    org.springframework.security: DEBUG
