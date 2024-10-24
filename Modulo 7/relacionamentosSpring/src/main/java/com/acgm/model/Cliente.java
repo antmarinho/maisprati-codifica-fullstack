@@ -1,17 +1,13 @@
 package com.acgm.model;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
-
-import java.util.UUID;
 
 @Entity
 public class Cliente {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.uuid.UuidGenerator")
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String name;
 
@@ -21,7 +17,7 @@ public class Cliente {
 
     public Cliente() {}
 
-    public Cliente(UUID id, String name, Conta conta) {
+    public Cliente(Long id, String name, Conta conta) {
 
         this.id = id;
         this.name = name;
@@ -29,11 +25,11 @@ public class Cliente {
 
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -11,16 +11,16 @@ public class Conta {
 
     private String numero;
 
-    @OneToOne(mappedBy = "conta")
-    private Cliente cliente;
+    //@OneToOne(mappedBy = "conta")
+   // private Cliente cliente;
 
     public Conta() {}
 
-    public Conta(String numero, Long id, Cliente cliente) {
+    public Conta(String numero, Long id) {
 
         this.numero = numero;
         this.id = id;
-        this.cliente = cliente;
+       // this.cliente = cliente;
     }
 
     public Long getId() {
@@ -39,11 +39,5 @@ public class Conta {
         this.numero = numero;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
 }
