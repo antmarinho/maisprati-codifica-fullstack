@@ -1,13 +1,13 @@
-package com.acgm.testJunit;
+package com.example.apiTestes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TestJunitApplication {
+public class ApiTestesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestJunitApplication.class, args);
+		SpringApplication.run(ApiTestesApplication.class, args);
 	}
 
 }
