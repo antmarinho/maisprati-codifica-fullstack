@@ -57,4 +57,22 @@ public class AlunoController {
 
     }
 
+    @DeleteMapping("/{id}/cursos/{cursoId}")
+    public Aluno deletarMatricula(@PathVariable Long id, @PathVariable Long cursoId) {
+
+        Aluno aluno = alunoRepository.getById(id);
+        Curso curso = cursoRepository.getById(cursoId);
+
+        List<Curso> cursosMatriculados = aluno.getCursos();
+
+        cursosMatriculados.remove(curso);
+
+        aluno.setCursos(cursosMatriculados);
+
+        aluno = alunoRepository.save(aluno);
+
+        return aluno;
+
+    }
+
 }

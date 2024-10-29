@@ -24,7 +24,8 @@ public class Aluno {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "alunos_cursos",
             joinColumns = @JoinColumn(name = "aluno_id",nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "curso_id", nullable = false)
+            inverseJoinColumns = @JoinColumn(name = "curso_id", nullable = false),
+            uniqueConstraints = @UniqueConstraint(columnNames = {"aluno_id", "curso_id"})
     )
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private List<Curso> cursos;
